@@ -1,0 +1,36 @@
+{
+  "name": "react-ui-components-examples",
+  "version": "0.1.0",
+  "author": "pychen",
+  "description": "react-ui-components examples.",
+  "repository": "https://github.com/pingyuanChen/react-ui-components.git",
+  "scripts": {
+    "prepublish": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "react-ui",
+    "react component",
+    "react ui",
+    "react component example"
+  ],
+  "license": "",
+  "dependencies": {
+    "lodash": "^3.5.0",
+    "react": ">=0.13",
+    "react-tap-event-plugin": ">=0.1.3",
+    "react-ui-components": "^0.2.0"
+  },
+  "devDependencies": {
+    "babelify": "^6.1.2",
+    "browserify": "^9.0.3",
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-react": "^3.0.1",
+    "gulp-sass": "^1.3.3",
+    "run-sequence": "^1.1.2",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

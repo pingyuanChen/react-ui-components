@@ -1,0 +1,30 @@
+{
+  "name": "react-ui-components",
+  "version": "0.2.2",
+  "description": "A collection of UI components for React",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy": "gulp copy",
+    "build": "npm run copy && babel --stage 1 ./src --out-dir ./lib",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pingyuanChen/react-ui-components.git"
+  },
+  "author": "pychen",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/pingyuanChen/react-ui-components/issues"
+  },
+  "homepage": "https://github.com/pingyuanChen/react-ui-components",
+  "peerDependencies": {
+    "react": ">=0.13",
+    "react-tap-event-plugin": ">=0.1.3"
+  },
+  "devDependencies": {
+    "babel": "^5.4.3",
+    "gulp": "^3.9.0"
+  }
+}
