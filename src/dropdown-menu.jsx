@@ -1,7 +1,10 @@
 var React = require('react');
-var Menu = require('./menu')
+var Menu = require('./menu');
+var DelegateClick = require('./mixins/delegate-click');
 
 module.exports = React.createClass({
+  mixins: [DelegateClick],
+
   propTypes: {
     menuItems: React.PropTypes.array.isRequired, //an array for rendering dropdown menu items
     wrapClassName: React.PropTypes.string,
@@ -13,6 +16,7 @@ module.exports = React.createClass({
 
   getDefaultProps: function(){
     return {
+      hasMask: false,
       autoWidth: false,
       displayKey: 'text',  //the value of displayKey for displaying
       valKey: 'value',  //the value of valKey may be for being sended to sever
@@ -53,13 +57,25 @@ module.exports = React.createClass({
           itemTpl={props.itemTpl}
           onItemTap={this._onItemTap} >
         </Menu>
-        {this.state.open && <div className='d-menu-mask' onTouchTap={this._onMenuMaskTap}></div>}
+        {this.state.open && props.hasMask && <div className='d-menu-mask' onTouchTap={this._onMenuMaskTap}></div>}
       </div>
     );
   },
 
   componentDidMount: function(){
     if(this.props.autoWidth) this._setWidth();
+  },
+
+  componentClick: function(){
+    this.close();
+  },
+
+  close: function(){
+    if(this.state.open){
+      this.setState({
+        open: false
+      });
+    }
   },
 
   _onToggleMenu: function(){
