@@ -7,7 +7,7 @@ var _          = require('lodash');
 var sequence   = require('run-sequence');
 var babelify   = require('babelify');
 
-var examples = ['dropdown-menu'];
+var examples = ['dropdown-menu', 'icon-button'];
 
 gulp.task('clean', function(done){
   del('./build/*', done);

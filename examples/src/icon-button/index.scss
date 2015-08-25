@@ -1,0 +1,36 @@
+@import "../../node_modules/react-ui-components/lib/sass/dropdown-menu";
+@import "../../node_modules/react-ui-components/lib/sass/menu";
+@import "../../node_modules/react-ui-components/lib/sass/icon-button";
+
+body{
+  margin: 0;
+}
+header{
+  text-align: center;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 24px;
+}
+#main {
+  text-align: center;
+}
+.icon-btn-wrap {
+  margin: 20px;
+  color: #888;
+  &.hovered{
+    color: #000;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

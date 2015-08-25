@@ -4,194 +4,61 @@
 var React = require('react');
 var injectTapEventPlugin = require('react-tap-event-plugin');
 var Components = require('react-ui-components');
-var DropdownMenu = Components.DropdownMenu;
+var IconButton = Components.IconButton;
 
 injectTapEventPlugin();
 
-var menuItems = {
-  'font': [{
-    'display': '普通',
-    'font-size': '11'
-  }, {
-    'display': '小标题',
-    'font-size': '7'
-  }, {
-    'display': '中标题',
-    'font-size': '14'
-  }, {
-    'display': '大标题',
-    'font-size': '16'
-  }],
-  'font-size': [{
-    'display': 9
-  }, {
-    'display': 10
-  }, {
-    'display': 11
-  }, {
-    'display': 12
-  }, {
-    'display': 14
-  }, {
-    'display': 18
-  }, {
-    'display': 24
-  }, {
-    'display': 30
-  }, {
-    'display': 36
-  }],
-  'color': [{
-    'display': '#f48287'
-  }, {
-    'display': '#f1ca18'
-  }, {
-    'display': '#a6c568'
-  }, {
-    'display': '#6699cc'
-  }, {
-    'display': '#a47ed2'
-  }, {
-    'display': '#888888'
-  }, {
-    'display': '#d0060e'
-  }, {
-    'display': '#da650a'
-  }, {
-    'display': '#17844c'
-  }, {
-    'display': '#0b24fb'
-  }, {
-    'display': '#670d7e'
-  }, {
-    'display': '#333333'
-  }],
-  'align': [{
-    'display': '左对齐',
-    'val': 'left'
-  }, {
-    'display': '居中对齐',
-    'val': 'center'
-  }, {
-    'display': '右对齐',
-    'val': 'right'
-  }, {
-    'display': '两端对齐',
-    'val': 'justify'
-  }]
-};
-
-var itemTpl = function itemTpl(index, data, selected, displayKey, valKey) {
-  var displayText = data[displayKey],
-      displayVal = data[valKey];
-  return React.createElement(
-    'div',
-    { 'data-val': displayVal },
-    React.createElement('span', { className: 'menu-item-icon' }),
-    React.createElement(
-      'span',
-      { className: 'menu-item-text' },
-      displayText
-    )
-  );
-},
-    selectedTpl = function selectedTpl(index, data, displayKey, valKey) {
-  var displayText = data[displayKey],
-      displayVal = data[valKey];
-  return React.createElement(
-    'div',
-    { 'data-val': displayVal },
-    React.createElement(
-      'span',
-      { className: 'menu-item-text' },
-      displayText
-    ),
-    React.createElement(
-      'span',
-      { className: 'menu-item-selected-icon' },
-      React.createElement('i', { className: 'fa fa-caret-down' })
-    )
-  );
-},
-    onMenuChange = function onMenuChange(e, index, data) {
-  // alert('click '+index+' item');
-},
-    colorItemTpl = function colorItemTpl(index, data, selected, displayKey, valKey) {
-  var displayText = data[displayKey],
-      style = {
-    background: displayText
-  };
-  return React.createElement('div', { 'data-val': displayText, className: 'color-menu-item', style: style });
-},
-    colorSelectedTpl = function colorSelectedTpl(index, data, displayKey, valKey) {
-  var displayText = data[displayKey],
-      style = {
-    background: displayText
-  };
-  return React.createElement(
-    'div',
-    { 'data-val': displayText },
-    React.createElement(
-      'span',
-      { className: 'menu-item-text color-menu-selected' },
-      React.createElement('i', { className: 'fa fa-font' }),
-      React.createElement('span', { className: 'color-underline', style: style })
-    ),
-    React.createElement(
-      'span',
-      { className: 'menu-item-selected-icon' },
-      React.createElement('i', { className: 'fa fa-caret-down' })
-    )
-  );
-};
+var icons = [{
+  tooltip: '全部已读',
+  iconBtnClass: 'fa fa-check'
+}, {
+  tooltip: '消息设置',
+  iconBtnClass: 'fa fa-cog'
+}, {
+  tooltip: '关机',
+  iconBtnClass: 'fa fa-power-off'
+}, {
+  tooltip: '删除',
+  iconBtnClass: 'fa fa-remove'
+}, {
+  tooltip: '分享',
+  iconBtnClass: 'fa fa-share'
+}, {
+  tooltip: '编辑',
+  iconBtnClass: 'fa fa-pencil'
+}, {
+  tooltip: '条形图',
+  iconBtnClass: 'fa fa-bar-chart'
+}, {
+  tooltip: '两端对齐',
+  iconBtnClass: 'fa fa-align-justify'
+}];
 
 var Main = React.createClass({
   displayName: 'Main',
 
   render: function render() {
+    var icons = this.props.icons,
+        btnEles = [],
+        btnEle;
+
+    for (var i = 0, l = icons.length; i < l; i++) {
+      btnEle = React.createElement(IconButton, {
+        key: i,
+        tooltip: icons[i].tooltip,
+        iconBtnClass: icons[i].iconBtnClass });
+      btnEles.push(btnEle);
+    }
+
     return React.createElement(
       'div',
       null,
-      React.createElement(DropdownMenu, {
-        menuItems: menuItems.font,
-        displayKey: 'display',
-        valKey: 'font-size',
-        autoWidth: 'true',
-        wrapClassName: 'dropdown-menu-font',
-        selectedIndex: 1,
-        itemTpl: itemTpl,
-        selectedTpl: selectedTpl,
-        onMenuChange: onMenuChange }),
-      React.createElement(DropdownMenu, {
-        menuItems: menuItems['font-size'],
-        displayKey: 'display',
-        valKey: 'display',
-        autoWidth: 'true',
-        wrapClassName: 'dropdown-menu-font-size',
-        itemTpl: itemTpl,
-        selectedTpl: selectedTpl,
-        onMenuChange: onMenuChange }),
-      React.createElement(DropdownMenu, {
-        menuItems: menuItems.color,
-        displayKey: 'display',
-        valKey: 'display',
-        wrapClassName: 'dropdown-menu-color',
-        itemTpl: colorItemTpl,
-        selectedTpl: colorSelectedTpl,
-        onMenuChange: onMenuChange }),
-      React.createElement(DropdownMenu, {
-        menuItems: menuItems.align,
-        displayKey: 'display',
-        valKey: 'val',
-        wrapClassName: 'dropdown-menu-align',
-        itemTpl: itemTpl,
-        selectedTpl: selectedTpl,
-        onMenuChange: onMenuChange })
+      btnEles
     );
   }
 });
 
-React.render(React.createElement(Main, null), document.getElementById('main'));
+React.render(React.createElement(Main, { icons: icons }), document.getElementById('main'));
 
 },{"react":170,"react-tap-event-plugin":6,"react-ui-components":9}],2:[function(require,module,exports){
 // shim for using process in browser
