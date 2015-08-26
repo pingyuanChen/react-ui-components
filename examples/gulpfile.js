@@ -7,7 +7,7 @@ var _          = require('lodash');
 var sequence   = require('run-sequence');
 var babelify   = require('babelify');
 
-var examples = ['dropdown-menu', 'icon-button'];
+var examples = ['dropdown-menu', 'icon-button', 'dialog'];
 
 gulp.task('clean', function(done){
   del('./build/*', done);
@@ -28,7 +28,7 @@ gulp.task('browserify', function(){
 });
 
 gulp.task('copy', function(){
-  gulp.src('./src/**/index.html')
+  gulp.src(['./src/**/index.html'])
     .pipe(gulp.dest('./build/'));
 });
 

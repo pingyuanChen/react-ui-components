@@ -15,14 +15,14 @@ module.exports = React.createClass({
   getInitialState: function(){
     return {
       isShowTip: false,
-      hovered: false
+      hovered: false,
+      tipClass: ''
     };
   },
 
   render: function(){
     var props = this.props,
       tooltipEle, 
-      tipClass = props.tipClass || '',
       hoveredClass = this.state.hovered ? 'hovered' : '';
     if(props.tooltip){
       tooltipEle = (
@@ -30,7 +30,7 @@ module.exports = React.createClass({
           ref="tooltip"
           tip={props.tooltip}
           isShow={this.state.isShowTip} 
-          customClass={tipClass}>
+          customClass={props.tipClass}>
         </Tooltip>
       );
     }

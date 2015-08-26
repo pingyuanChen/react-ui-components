@@ -4,6 +4,10 @@ module.exports = {
   Menu: require('./menu'),
 
   IconButton: require('./icon-button'),
+  SimpleButton: require('./simple-button'),
 
-  Tooltip: require('./tooltip')
+  Dialog: require('./dialog'),
+
+  Tooltip: require('./tooltip'),
+  Mask: require('./mask')
 };

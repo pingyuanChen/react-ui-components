@@ -64,7 +64,8 @@
   left: -22px;
   bottom: -28px;
   white-space: nowrap;
-  box-shadow: 0px 2px 8px #ccc; }
+  box-shadow: 0px 2px 8px #ccc;
+  padding: 4px; }
 
 body {
   margin: 0; }
@@ -76,5 +77,10 @@ header {
   margin-bottom: 24px; }
 
 #main {
+  text-align: center; }
+
+.icon-btn-wrap {
   margin: 20px;
-  padding-left: 60px; }
+  color: #888; }
+  .icon-btn-wrap.hovered {
+    color: #000; }

@@ -63,6 +63,12 @@ header {
   line-height: 32px;
   margin-bottom: 24px; }
 
+#main {
+  text-align: center; }
+
+.d-menu-wrap {
+  margin: 26px; }
+
 .color-menu-selected {
   position: relative; }
 

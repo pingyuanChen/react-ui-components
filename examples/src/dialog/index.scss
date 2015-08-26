@@ -1,0 +1,44 @@
+@import "../../node_modules/react-ui-components/lib/sass/mask";
+@import "../../node_modules/react-ui-components/lib/sass/dialog";
+
+body{
+  margin: 0;
+}
+header{
+  text-align: center;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 24px;
+}
+.hide{
+  display: none;
+}
+#main{
+  text-align: center;
+}
+.btn {
+  margin: 16px;
+  padding: 6px;
+  line-height: 26px;
+  font-size: 17px;
+}
+.dialog-foot{
+  .btn{
+    font-size: 14px;
+    line-height: 21px;
+    margin: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

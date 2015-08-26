@@ -9,7 +9,8 @@ module.exports = React.createClass({
 
   getInitialState: function(){
     return {
-      isShow: this.props.isShow || false
+      isShow: this.props.isShow || false,
+      customClass: ''
     }
   },
 
