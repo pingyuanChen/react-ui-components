@@ -10,6 +10,7 @@ After npm install, you'll find all the source code in the src/ folder and their 
 
 ## Usage
 Once react-ui-components is installed in your project, you can use like this:
+```
 /** MyFirstReactComponent.jsx */
 
 var React = require('react');
@@ -56,6 +57,7 @@ React.render(<Buttons />, document.getElementById('main'))
 
 ## Examples
 To help you get started, you can find complete example in /examples folder.
+![Demo](https://github.com/pingyuanChen/react-ui-components/blob/master/demo.png)
 
 ## FAQ
 
