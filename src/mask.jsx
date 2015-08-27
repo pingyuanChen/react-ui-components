@@ -44,7 +44,7 @@ module.exports = React.createClass({
   },
 
   _onTap: function(e){
-    this.props.onTap && this.props.onTap();
+    this.props.onTap && this.props.onTap(e);
   }
 });
 

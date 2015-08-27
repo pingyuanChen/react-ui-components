@@ -1,0 +1,131 @@
+@import "../../node_modules/react-ui-components/lib/sass/index";
+
+@import "../dialog/index";
+@import "../dropdown-menu/index";
+@import "../icon-button/index";
+
+body, p, div, input, ul, li{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+input:focus{
+  outline:0;
+}
+body{
+  background: #fafafa;
+  color: #000;
+  list-style: none;
+  font-size: 16px;
+  font-family: Roboto, Helvetica;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -ms-touch-action: none;
+  -webkit-font-smoothing: antialiased;
+}
+ul {
+  display: block;
+  list-style: none;
+  -webkit-padding-start: 0;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+header{
+  margin-bottom: 0;
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 32px;
+  background-color: #1fa67a;
+  border-top: 1px solid #34a782;
+  border-bottom: 1px solid #1b926c;
+  color: #fff;
+}
+.title{
+  font-size: 36px;
+  text-shadow: 4px 3px 0px #1d9d74, 9px 8px 0px rgba(0, 0, 0, 0.15);
+  line-height: 74px;
+}
+.main{
+  position: relative;
+  height: 100%;
+}
+.main-content{
+  padding-top: 20px;
+  padding-left: 180px;
+}
+.sidebar-menu{
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 175px;
+  height: 100%;
+  border-right: 1px solid #ccc;
+  .menu-wrap{
+    box-shadow: none;
+  }
+  .menu-item{
+    -webkit-user-select: none;
+    cursor: pointer;
+    line-height: 48px;
+    padding-left: 24px;
+    padding-right: 24px;
+    color: rgba(0, 0, 0, 0.870588);
+    text-align: left;
+  }
+}
+.menu-item-selected{
+  background-color: #fff;
+  a{
+    color: #198764;
+  }
+}
+
+
+/******btn*****/
+.btn-demo{
+  width: 60%;
+  margin: 0 auto;
+  .btn{
+    float: left;
+    margin: 26px;
+  }
+}
+.icon-button{
+  background-color: #00bcd4;
+  a{
+    color: #fff;
+  }
+}
+.github-icon{
+  float: left;
+  width: 16px;
+  line-height: 30px;
+  padding-left: 8px;
+}
+.submit-btn{
+  background-color: #337ab7;
+  color: #fff;
+}
+.anchor-btn{
+  background-color: #31b0d5;
+  a{
+    color: #fff;
+  }
+}
+.upload-btn{
+  background-color: #449d44;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+

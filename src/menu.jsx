@@ -5,7 +5,8 @@ module.exports = React.createClass({
   propTypes: {
     menuItems: React.PropTypes.array.isRequired,
     selectedIndex: React.PropTypes.number,
-    onItemTap: React.PropTypes.func
+    onItemTap: React.PropTypes.func,
+    itemTpl: React.PropTypes.func
   },
 
   getDefaultProps: function(){},
@@ -32,7 +33,7 @@ module.exports = React.createClass({
     for(var i=0,l=props.menuItems.length; i<l; i++){
       menuItem = (
         <MenuItem
-          selected={props.selectedIndex === i}
+          selected={this.state.selectedIndex === i}
           key={i}
           index={i}
           data={props.menuItems[i]}
@@ -51,7 +52,7 @@ module.exports = React.createClass({
     this.setState({
       selectedIndex: index
     });
-    this.props.onItemTap(e, index, data)
+    this.props.onItemTap && this.props.onItemTap(e, index, data)
   }
 
 });

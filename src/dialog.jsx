@@ -1,6 +1,6 @@
 var React = require('react');
 var WindowListener = require('./mixins/window-listener');
-var SimpleButton = require('./simple-button');
+var SimpleButton = require('./buttons/simple-button');
 var Mask = require('./mask');
 
 module.exports = React.createClass({

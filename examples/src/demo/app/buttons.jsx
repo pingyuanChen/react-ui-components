@@ -1,17 +1,3 @@
-# react-ui-components
-A collection of UI components for React
-
-## Install
-To install the latest release:
-```shell
-npm install react-ui-components
-```
-After npm install, you'll find all the source code in the src/ folder and their compiled results in the /lib folder. And some basic styles of components in scss/ folder.
-
-## Usage
-Once react-ui-components is installed in your project, you can use like this:
-/** MyFirstReactComponent.jsx */
-
 var React = require('react');
 var Components = require('react-ui-components');
 var SimpleButton = Components.SimpleButton;
@@ -37,6 +23,25 @@ module.exports = React.createClass({
           label="A anchor"
           href="http://www.baidu.com/" >
         </LinkButton>
+
+        <SimpleButton 
+          customClass="upload-btn"
+          label="Upload Image" >
+          <input type="file"></input>
+        </SimpleButton>
+
+        <LinkButton 
+          customClass="icon-button"
+          label="Github"
+          href="http://github.com/" >
+          <i className="github-icon fa fa-github"></i>
+        </LinkButton>
+
+        <SimpleButton 
+          customClass="disable-btn"
+          label="Primary Button"
+          disabled={true} >
+        </SimpleButton>
       </div>
     );
   },
@@ -45,17 +50,3 @@ module.exports = React.createClass({
     alert('Clicked...')
   }
 });
-
-/** app.jsx */
-var React = require('react');
-var injectTapEventPlugin = require('react-tap-event-plugin');
-var Buttons = require('./MyFirstReactComponent.jsx');
-
-React.render(<Buttons />, document.getElementById('main'))
-```
-
-## Examples
-To help you get started, you can find complete example in /examples folder.
-
-## FAQ
-

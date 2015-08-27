@@ -48,12 +48,6 @@ header {
 #main {
   text-align: center; }
 
-.btn {
-  margin: 16px;
-  padding: 6px;
-  line-height: 26px;
-  font-size: 17px; }
-
 .dialog-foot .btn {
   font-size: 14px;
   line-height: 21px;

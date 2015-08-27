@@ -1,5 +1,5 @@
 var React = require('react');
-var Tooltip = require('./tooltip');
+var Tooltip = require('../tooltip');
 
 module.exports = React.createClass({
   propTypes: {
