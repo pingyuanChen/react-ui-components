@@ -6,7 +6,7 @@ var LinkButton = Components.LinkButton;
 module.exports = React.createClass({
   render: function(){
     return (
-      <div className="btn-demo">
+      <div className="btn-demo demo-middle">
         <SimpleButton 
           customClass="default-btn"
           label="A button element" >

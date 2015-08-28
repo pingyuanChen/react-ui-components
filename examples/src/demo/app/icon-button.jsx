@@ -23,7 +23,7 @@ module.exports = React.createClass({
     }
 
     return (
-      <div>
+      <div className="demo-middle">
       {btnEles}
       </div>
     );

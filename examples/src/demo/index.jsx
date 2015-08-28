@@ -13,6 +13,7 @@ var Dialog = require('./app/dialog.jsx');
 var IconButtons = require('./app/icon-button.jsx');
 var DropdownMenu = require('./app/dropdown-menu.jsx');
 var Toast = require('./app/toast.jsx');
+var Tab = require('./app/tab.jsx');
 
 
 injectTapEventPlugin();
@@ -39,6 +40,7 @@ var routes = (
     <Route name="icon-button" path="/icon-button" handler={IconButtons} />
     <Route name="dropdown-menu" path="/dropdown-menu" handler={DropdownMenu} />
     <Route name="toast" path="/toast" handler={Toast} />
+    <Route name="tab" path="/tab" handler={Tab} />
     <DefaultRoute handler={Buttons}/>
   </Route>
 );

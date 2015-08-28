@@ -1,6 +1,6 @@
 {
   "name": "react-ui-components",
-  "version": "0.4.5",
+  "version": "0.5.4",
   "description": "A collection of UI components for React",
   "main": "./lib/index.js",
   "scripts": {
@@ -9,6 +9,15 @@
     "build": "npm run copy && babel --stage 1 ./src --out-dir ./lib",
     "prepublish": "npm run build"
   },
+  "keywords": [
+    "react",
+    "react-ui",
+    "react-components",
+    "react-ui-components",
+    "react ui",
+    "react components",
+    "react ui components"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/pingyuanChen/react-ui-components.git"

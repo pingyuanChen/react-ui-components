@@ -6,7 +6,7 @@ var SimpleButton = Components.SimpleButton;
 module.exports = React.createClass({
   render: function(){
     return (
-      <div className="demo-toast">
+      <div className="demo-toast demo-middle">
         <SimpleButton 
           customClass="submit-btn"
           label="Default Toast"

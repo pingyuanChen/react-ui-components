@@ -16,7 +16,7 @@ module.exports = React.createClass({
 
   render: function(){
     return (
-      <div className="sidebar-menu">
+      <div className="sidebar-menu demo-middle">
         <Menu
           menuItems={this.props.sidebarData}
           displayKey="display"
@@ -33,7 +33,7 @@ module.exports = React.createClass({
     return (
       <div data-val={displayVal} className={selected ? 'selected' : ''}>
         <span className="menu-item-text">
-          <Link to={displayVal}>{displayText}</Link>
+          <Link className="menu-item-link" to={displayVal}>{displayText}</Link>
         </span>
       </div>
     );

@@ -193,6 +193,12 @@
 .error {
   background: #f2dede; }
 
+.tab-head-wrap {
+  line-height: 35px; }
+
+.tab-head-item {
+  display: inline-block; }
+
 .mask {
   position: fixed;
   top: 0;
@@ -502,8 +508,8 @@ header {
     -webkit-user-select: none;
     cursor: pointer;
     line-height: 48px;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 0;
+    padding-right: 0;
     color: rgba(0, 0, 0, 0.870588);
     text-align: left; }
 
@@ -511,6 +517,9 @@ header {
   background-color: #fff; }
   .menu-item-selected a {
     color: #198764; }
+
+.menu-item-link {
+  display: block; }
 
 /******btn*****/
 .btn-demo {
@@ -543,3 +552,20 @@ header {
 .upload-btn {
   background-color: #449d44;
   color: #fff; }
+
+/****************Tab******************************/
+.demo-tab {
+  width: 60%;
+  margin: 0 auto; }
+
+.tab-head-wrap {
+  background-color: #1fa67a;
+  color: #b0ddce; }
+
+.tab-head-item.selected {
+  background-color: #1b926c;
+  color: #fff; }
+
+.tab-content-wrap {
+  line-height: 30px;
+  margin-top: 13px; }

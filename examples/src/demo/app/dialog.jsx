@@ -18,7 +18,7 @@ module.exports = React.createClass({
     ];
 
     return (
-      <div>
+      <div className="demo-middle">
         <SimpleButton customClass="standard" label="标准对话框" onTap={this._onStandardTap}>
         </SimpleButton>
         <Dialog

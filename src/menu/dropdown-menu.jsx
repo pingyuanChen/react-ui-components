@@ -1,6 +1,6 @@
 var React = require('react');
 var Menu = require('./menu');
-var DelegateClick = require('./mixins/delegate-click');
+var DelegateClick = require('../mixins/delegate-click');
 
 module.exports = React.createClass({
   mixins: [DelegateClick],

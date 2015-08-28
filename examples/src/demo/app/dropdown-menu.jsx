@@ -54,7 +54,7 @@ module.exports = React.createClass({
   render: function(){
     var menuItems = model.menuItems;
     return (
-      <div>
+      <div className="demo-middle">
         <DropdownMenu
           menuItems={menuItems.font}
           displayKey="display"

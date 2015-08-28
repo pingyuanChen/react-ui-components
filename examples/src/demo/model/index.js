@@ -20,6 +20,10 @@ module.exports = {
     {
       'display': 'Toast',
       'link': 'toast'
+    },
+    {
+      'display': 'Tab',
+      'link': 'tab'
     }
   ],
   menuItems: {
