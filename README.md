@@ -56,7 +56,8 @@ React.render(<Buttons />, document.getElementById('main'))
 ```
 
 ## Examples
-To help you get started, you can find complete example in /examples folder.
+To help you get started, you can find complete example in /examples folder or visit [the website](http://reactuicomponents.sinaapp.com/#/)
+
 ![Demo](https://github.com/pingyuanChen/react-ui-components/blob/master/demo.png)
 
 ## FAQ
