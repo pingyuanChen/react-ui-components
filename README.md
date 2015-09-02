@@ -42,7 +42,7 @@ module.exports = React.createClass({
     );
   },
 
-  _onTap: function(){
+  _onTap: function(e){
     alert('Clicked...')
   }
 });
