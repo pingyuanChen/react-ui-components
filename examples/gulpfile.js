@@ -21,7 +21,7 @@ gulp.task('sass', function(){
 
 gulp.task('browserify', function(){
   browserify(['./src/'+global.example+'/index.jsx'])
-    .transform(babelify.configure({stage: 1}))
+    .transform(babelify.configure({stage: 0}))
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('./build/'+global.example+'/'));

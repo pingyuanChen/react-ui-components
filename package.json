@@ -1,12 +1,12 @@
 {
   "name": "react-ui-components",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "A collection of UI components for React",
   "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "copy": "gulp copy",
-    "build": "npm run copy && babel --stage 1 ./src --out-dir ./lib",
+    "build": "npm run copy && babel --stage 0 ./src --out-dir ./lib",
     "prepublish": "npm run build"
   },
   "keywords": [
