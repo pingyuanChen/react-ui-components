@@ -14,5 +14,9 @@ module.exports = {
 
   Tooltip: require('./tooltip'),
   Mask: require('./mask'),
-  Toast: require('./toast')
+  Toast: require('./toast'),
+
+  /**mixins**/
+  WindowListener: require('./mixins/window-listener'),
+  DelegateClick: require('./mixins/delegate-click')
 };
