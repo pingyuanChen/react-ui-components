@@ -18,6 +18,16 @@ module.exports = React.createClass({
     };
   },
 
+  componentDidMount: function(){
+    if (this.props.hasOwnProperty('selectedIndex')) this._setSelectedIndex(this.props.selectedIndex);
+  },
+
+  componentWillReceiveProps: function(nextProps) {
+    if (nextProps.hasOwnProperty('selectedIndex')) {
+      this._setSelectedIndex(nextProps.selectedIndex);
+    }
+  },
+
   render: function(){
     return (
       <div className="menu-wrap">
@@ -66,9 +76,13 @@ module.exports = React.createClass({
       }
     }
     return 0;
+  },
+
+  _setSelectedIndex: function(selectedIndex){
+    this.setState({
+      selectedIndex: selectedIndex
+    });
   }
-
-
 
 
 
