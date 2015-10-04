@@ -38,6 +38,19 @@ module.exports = React.createClass({
     };
   },
 
+  componentDidMount: function(){
+    if(this.props.autoWidth) this._setWidth();
+    if (this.props.hasOwnProperty('selectedIndex')) this._setSelectedIndex(this.props.selectedIndex);
+  },
+
+  componentWillReceiveProps: function(nextProps) {
+    if (this.props.autoWidth) this._setWidth();
+
+    if (nextProps.hasOwnProperty('selectedIndex')) {
+      this._setSelectedIndex(nextProps.selectedIndex);
+    }
+  },
+
   render: function(){
     var props = this.props,
       showClassName = this.state.open ? "" : "unactive",
@@ -60,10 +73,6 @@ module.exports = React.createClass({
         {this.state.open && props.hasMask && <div className='d-menu-mask' onTouchTap={this._onMenuMaskTap}></div>}
       </div>
     );
-  },
-
-  componentDidMount: function(){
-    if(this.props.autoWidth) this._setWidth();
   },
 
   componentClick: function(){
@@ -106,6 +115,12 @@ module.exports = React.createClass({
     var dMenuEle = React.findDOMNode(this),
       menuWrap = React.findDOMNode(this.refs.menuWrap);
     dMenuEle.style.width = menuWrap.offsetWidth + 'px';
+  },
+
+  _setSelectedIndex: function(selectedIndex){
+    this.setState({
+      selectedIndex: selectedIndex
+    });
   }
 });
 
