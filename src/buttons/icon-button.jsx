@@ -3,6 +3,7 @@ var Tooltip = require('../tooltip');
 
 module.exports = React.createClass({
   propTypes: {
+    customClass: React.PropTypes.string,
     tooltip: React.PropTypes.string,
     disabled: React.PropTypes.bool,
     onBtnTap: React.PropTypes.func,
@@ -10,6 +11,12 @@ module.exports = React.createClass({
     tipClass: React.PropTypes.string,
     iconBtnClass: React.PropTypes.string,
     iconBtnTpl: React.PropTypes.func
+  },
+
+  getDefaultProps: function(){
+    return {
+      customClass: ''
+    };
   },
 
   getInitialState: function(){
@@ -37,7 +44,7 @@ module.exports = React.createClass({
 
     return (
       <span 
-        className={"icon-btn-wrap " + hoveredClass}
+        className={"icon-btn-wrap " + hoveredClass + ' '+props.customClass}
         onMouseEnter={this._handleMouseEnter}
         onMouseLeave={this._handleMouseLeave}
         onTouchTap={props.onBtnTap} >

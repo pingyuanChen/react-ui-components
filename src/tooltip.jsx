@@ -7,20 +7,14 @@ module.exports = React.createClass({
     customClass: React.PropTypes.string
   },
 
-  getInitialState: function(){
-    return {
-      isShow: this.props.isShow || false,
-      customClass: ''
-    }
-  },
-
   render: function(){
     var props = this.props,
-      className = props.isShow ? '' : 'hide';
+      className = props.isShow ? '' : 'hide',
+      customCls = props.customClass || '';
 
     return (
       <span
-        className={"tooltip "+className+' '+props.customClass} >
+        className={"tooltip "+className+' '+customCls} >
         {props.tip}
       </span>
     );
