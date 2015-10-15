@@ -26,6 +26,7 @@ module.exports = React.createClass({
         return (<div data-val={displayVal}>{displayText}</div>);
       },
       selectedTpl: function(index, data, displayKey, valKey){
+        var displayText = data[displayKey];
         return (<div>{data[displayText]}</div>);
       }
     };
