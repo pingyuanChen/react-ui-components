@@ -11,8 +11,7 @@ module.exports = React.createClass({
     itemTpl: React.PropTypes.func,   //custom template for each menu items
     selectedTpl: React.PropTypes.func,   //custom template for selected item showing
     selectedIndex: React.PropTypes.number,
-    onMenuChange: React.PropTypes.func,
-    fixHeader: React.PropTypes.func  //not update menu header with menu items tap
+    onMenuChange: React.PropTypes.func
   },
 
   getDefaultProps: function(){
@@ -56,19 +55,12 @@ module.exports = React.createClass({
   render: function(){
     var props = this.props,
       showClassName = this.state.open ? "" : "unactive",
-      wrapClassName = props.wrapClassName+' d-menu-wrap '+showClassName,
-      headerHtml = '';
-
-    if(props.fixHeader){
-      headerHtml = props.fixHeader();
-    }else{
-      headerHtml = props.selectedTpl(this.state.selectedIndex, props.menuItems[this.state.selectedIndex], props.displayKey, props.valKey);
-    }
+      wrapClassName = props.wrapClassName+' d-menu-wrap '+showClassName;
 
     return (
       <div className={wrapClassName}>
         <div className="d-menu-display-wrap" onTouchTap={this._onToggleMenu}>
-          {headerHtml}
+          {props.selectedTpl(this.state.selectedIndex, props.menuItems[this.state.selectedIndex], props.displayKey, props.valKey)}
         </div>
         <Menu
           ref="menuWrap"
