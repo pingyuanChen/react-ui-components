@@ -11,7 +11,8 @@ module.exports = React.createClass({
     itemTpl: React.PropTypes.func,   //custom template for each menu items
     selectedTpl: React.PropTypes.func,   //custom template for selected item showing
     selectedIndex: React.PropTypes.number,
-    onMenuChange: React.PropTypes.func
+    onMenuChange: React.PropTypes.func,
+    forceTap: React.PropTypes.bool  //force trigger onMenuChange unconditional
   },
 
   getDefaultProps: function(){
@@ -96,8 +97,10 @@ module.exports = React.createClass({
 
   _onItemTap: function(e, index, data){
     var props = this.props;
-    if (this.state.selectedIndex !== index && props.onMenuChange){
-      props.onMenuChange(e, index, data);
+    if(props.onMenuChange){
+      if(this.state.selectedIndex !== index || props.forceTap){
+        props.onMenuChange(e, index, data);
+      }
     }
 
     this.setState({
