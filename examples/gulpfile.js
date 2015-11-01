@@ -28,7 +28,7 @@ gulp.task('browserify', function(){
 });
 
 gulp.task('copy', function(){
-  gulp.src(['./src/**/index.html'])
+  gulp.src(['./src/**/index.html', './src/assets/**'])
     .pipe(gulp.dest('./build/'));
 });
 

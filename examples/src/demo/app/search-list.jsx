@@ -94,7 +94,7 @@ module.exports = React.createClass({
     return (
       <div className="search-res-row">
         <ImageIcon 
-         defaultImg={data.avatar}
+         defaultImg="../images/loading.gif"
          realImg={data.avatar} />
         <span className="row-user-name">
           {data.name}

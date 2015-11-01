@@ -4115,24 +4115,34 @@ module.exports = React.createClass({
 
   getDefaultProps: function getDefaultProps() {
     return {
+      customClass: '',
       defaultImg: '',
       realImg: ''
     };
   },
 
+  getInitialState: function getInitialState() {
+    return {
+      loaded: null
+    };
+  },
+
   componentDidMount: function componentDidMount() {
-    var img,
-        self = React.findDOMNode(this),
+    var self = this,
+        img,
         src = this.props.realImg;
     if (src) {
       img = document.createElement('img');
       eventsUtils.on(img, 'load', function () {
-        self.style.backgroundImage = 'url(' + src + ')  !important';
-        self.style.visibility = 'hidden';
+        self.setState({
+          loaded: 'success'
+        });
       });
 
       eventsUtils.on(img, 'error', function () {
-        self.style.visibility = 'visible';
+        self.setState({
+          loaded: 'failed'
+        });
       });
 
       img.setAttribute("src", src);
@@ -4140,14 +4150,33 @@ module.exports = React.createClass({
   },
 
   render: function render() {
-    var props = this.props;
+    var props = this.props,
+        imgWrapStyle = {},
+        imgStyle = {};
+
+    if (this.state.loaded == 'success') {
+      imgWrapStyle = {
+        backgroundImage: 'url(' + props.realImg + ') !important'
+      };
+      imgStyle = {
+        visibility: 'hidden'
+      };
+    } else if (this.state.loaded == 'failed') {
+      imgStyle = {
+        visibility: 'visible'
+      };
+    }
 
     return React.createElement(
       'div',
-      { className: "img-wrap " + props.customClass },
+      {
+        className: "img-wrap " + props.customClass,
+        style: imgWrapStyle },
       React.createElement('img', {
+        ref: 'image',
         'data-real': props.realImg,
-        src: props.defaultImg })
+        src: props.defaultImg,
+        style: imgStyle })
     );
   }
 
@@ -25090,7 +25119,7 @@ module.exports = React.createClass({
       'div',
       { className: 'search-res-row' },
       React.createElement(ImageIcon, {
-        defaultImg: data.avatar,
+        defaultImg: '../images/loading.gif',
         realImg: data.avatar }),
       React.createElement(
         'span',
@@ -25403,102 +25432,102 @@ module.exports = {
   searchList: [{
     'name': 'tom',
     'email': 'tom.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }, {
     'name': 'haihao',
     'email': 'haihai.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }, {
     'name': 'chenchen',
     'email': 'chenchen.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }, {
     'name': 'xping',
     'email': 'xping.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }, {
     'name': 'mike',
     'email': 'mike.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }, {
     'name': 'cristal',
     'email': 'cristal.123@gmail.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }, {
     'name': 'jorn',
     'email': 'jorn.123.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }, {
     'name': 'mary',
     'email': 'mary@gmail.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }, {
     'name': 'fat',
     'email': 'fat@gmail.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }, {
     'name': 'sheep',
     'email': 'sheep@gmail.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }, {
     'name': 'pythom',
     'email': 'pdjha@qq.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }, {
     'name': 'ada',
     'email': 'ada@gmail.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }, {
     'name': 'alan',
     'email': 'alankdja@89.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }, {
     'name': 'barry',
     'email': 'barryjdajdhj@78.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }, {
     'name': 'beck',
     'email': 'beck@gmail.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }, {
     'name': 'amos',
     'email': 'amos@gmail.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }, {
     'name': 'angel',
     'email': 'angel@gmail.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }, {
     'name': 'cash',
     'email': 'cash@gmail.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }, {
     'name': 'christ',
     'email': 'christ@gmail.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }, {
     'name': 'yeo',
     'email': 'yeo@gmail.com',
-    'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+    'avatar': '../images/icon.png',
     'status': ''
   }]
 };

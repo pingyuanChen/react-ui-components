@@ -1015,24 +1015,34 @@ module.exports = React.createClass({
 
   getDefaultProps: function getDefaultProps() {
     return {
+      customClass: '',
       defaultImg: '',
       realImg: ''
     };
   },
 
+  getInitialState: function getInitialState() {
+    return {
+      loaded: null
+    };
+  },
+
   componentDidMount: function componentDidMount() {
-    var img,
-        self = React.findDOMNode(this),
+    var self = this,
+        img,
         src = this.props.realImg;
     if (src) {
       img = document.createElement('img');
       eventsUtils.on(img, 'load', function () {
-        self.style.backgroundImage = 'url(' + src + ')  !important';
-        self.style.visibility = 'hidden';
+        self.setState({
+          loaded: 'success'
+        });
       });
 
       eventsUtils.on(img, 'error', function () {
-        self.style.visibility = 'visible';
+        self.setState({
+          loaded: 'failed'
+        });
       });
 
       img.setAttribute("src", src);
@@ -1040,14 +1050,33 @@ module.exports = React.createClass({
   },
 
   render: function render() {
-    var props = this.props;
+    var props = this.props,
+        imgWrapStyle = {},
+        imgStyle = {};
+
+    if (this.state.loaded == 'success') {
+      imgWrapStyle = {
+        backgroundImage: 'url(' + props.realImg + ') !important'
+      };
+      imgStyle = {
+        visibility: 'hidden'
+      };
+    } else if (this.state.loaded == 'failed') {
+      imgStyle = {
+        visibility: 'visible'
+      };
+    }
 
     return React.createElement(
       'div',
-      { className: "img-wrap " + props.customClass },
+      {
+        className: "img-wrap " + props.customClass,
+        style: imgWrapStyle },
       React.createElement('img', {
+        ref: 'image',
         'data-real': props.realImg,
-        src: props.defaultImg })
+        src: props.defaultImg,
+        style: imgStyle })
     );
   }
 
