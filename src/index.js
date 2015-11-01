@@ -16,6 +16,10 @@ module.exports = {
   Mask: require('./mask'),
   Toast: require('./toast'),
 
+  SearchInput: require('./search-input'),
+
+  ImageIcon: require('./icons/image-icon'),
+
   /**mixins**/
   WindowListener: require('./mixins/window-listener'),
   DelegateClick: require('./mixins/delegate-click')
