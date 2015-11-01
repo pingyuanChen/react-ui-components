@@ -14,6 +14,7 @@ var IconButtons = require('./app/icon-button.jsx');
 var DropdownMenu = require('./app/dropdown-menu.jsx');
 var Toast = require('./app/toast.jsx');
 var Tab = require('./app/tab.jsx');
+var Search = require('./app/search-list.jsx');
 
 
 injectTapEventPlugin();
@@ -41,6 +42,7 @@ var routes = (
     <Route name="dropdown-menu" path="/dropdown-menu" handler={DropdownMenu} />
     <Route name="toast" path="/toast" handler={Toast} />
     <Route name="tab" path="/tab" handler={Tab} />
+    <Route name="search" path="/search" handler={Search} />
     <DefaultRoute handler={Buttons}/>
   </Route>
 );

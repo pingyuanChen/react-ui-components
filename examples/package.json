@@ -1,6 +1,6 @@
 {
   "name": "react-ui-components-examples",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "pychen",
   "description": "react-ui-components examples.",
   "repository": "https://github.com/pingyuanChen/react-ui-components.git",
@@ -23,7 +23,7 @@
     "react-dynamic-list": "^0.1.7",
     "react-router": "^0.13.3",
     "react-tap-event-plugin": ">=0.1.3",
-    "react-ui-components": "^0.5.0"
+    "react-ui-components": "^0.7.1"
   },
   "devDependencies": {
     "babelify": "^6.1.2",

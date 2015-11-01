@@ -24,6 +24,10 @@ module.exports = {
     {
       'display': 'Tab',
       'link': 'tab'
+    },
+    {
+      'display': 'Search List',
+      'link': 'search'
     }
   ],
   menuItems: {

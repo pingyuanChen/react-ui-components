@@ -443,12 +443,12 @@ header {
   .icon-btn-wrap.hovered {
     color: #000; }
 
-body, p, div, input, ul, li {
+body, p, div, input, ul, li, form {
   margin: 0;
   padding: 0;
   border: 0; }
 
-input:focus {
+input, input:focus {
   outline: 0; }
 
 body {
@@ -569,3 +569,16 @@ header {
 .tab-content-wrap {
   line-height: 30px;
   margin-top: 13px; }
+
+/****************Search List******************************/
+.ui-list {
+  line-height: 24px; }
+
+.ui-list-head {
+  text-align: left;
+  text-indent: 20px;
+  background: -webkit-linear-gradient(top, #dcddde, #ecedee); }
+
+.search-wrap {
+  width: 400px;
+  border: 1px solid #c9c9c9; }
