@@ -1135,6 +1135,7 @@ module.exports = React.createClass({
 'use strict';
 
 var React = require('react');
+var eventsUtils = require('../utils/events');
 
 module.exports = React.createClass({
   displayName: 'exports',
@@ -1158,12 +1159,16 @@ module.exports = React.createClass({
         src = this.props.realImg;
     if (src) {
       img = document.createElement('img');
-      $(img).bind("load", function () {
-        self.parent().css('backgroundImage', 'url(' + src + ')  !important');
-        self.css('visibility', 'hidden');
-      }).bind('error', function () {
-        self.css('visibility', 'visible');
-      }).attr("src", src);
+      eventsUtils.on(img, 'load', function () {
+        self.style.backgroundImage = 'url(' + src + ')  !important';
+        self.style.visibility = 'hidden';
+      });
+
+      eventsUtils.on(img, 'error', function () {
+        self.style.visibility = 'visible';
+      });
+
+      img.setAttribute("src", src);
     }
   },
 
@@ -1180,7 +1185,7 @@ module.exports = React.createClass({
   }
 
 });
-},{"react":182}],12:[function(require,module,exports){
+},{"../utils/events":27,"react":182}],12:[function(require,module,exports){
 'use strict';
 
 module.exports = {

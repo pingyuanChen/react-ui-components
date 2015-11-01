@@ -10,6 +10,7 @@ module.exports = React.createClass({
 
   getDefaultProps: function(){
     return {
+      customClass: '',
       defaultImg: '',
       realImg: ''
     };
@@ -23,11 +24,11 @@ module.exports = React.createClass({
       img = document.createElement('img');
       eventsUtils.on(img, 'load', function() {
         self.style.backgroundImage = 'url('+src+')  !important';
-        self.style.visibility = 'hidden';
+        this.style.visibility = 'hidden';
       });
 
       eventsUtils.on(img, 'error', function(){
-        self.style.visibility = 'visible';
+        this.style.visibility = 'visible';
       });
 
       img.setAttribute("src", src);
