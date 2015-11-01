@@ -80,6 +80,7 @@ module.exports = React.createClass({
       itemKey = item[key];
       firstLetter = itemKey[0].toUpperCase();
       if(groups.indexOf(firstLetter) == -1){
+        groups.push(firstLetter);
         groupedData.push({
           name: firstLetter,
           items: [item]
@@ -94,7 +95,7 @@ module.exports = React.createClass({
     return (
       <div className="search-res-row">
         <ImageIcon 
-         defaultImg={data.avatar}
+         defaultImg="../images/loading.gif"
          realImg={data.avatar} />
         <span className="row-user-name">
           {data.name}

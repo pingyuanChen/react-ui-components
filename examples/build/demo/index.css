@@ -199,6 +199,16 @@
 .tab-head-item {
   display: inline-block; }
 
+.img-wrap {
+  display: inline-block;
+  background: no-repeat 50% 50%;
+  background-color: #e6e6e6;
+  background-size: cover; }
+
+.img-wrap img {
+  width: 100%;
+  display: block; }
+
 .mask {
   position: fixed;
   top: 0;
@@ -412,6 +422,27 @@ header {
 .menu-item-selected {
   background: #ccc; }
 
+.btn {
+  outline: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  padding: 0;
+  border-radius: 2px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  background: #e6e6e6;
+  line-height: 30px;
+  margin: 16px;
+  font-size: 17px; }
+
+.btn-inner:hover, btn[disabled] {
+  background-color: rgba(255, 255, 255, 0.4); }
+
+.btn-label {
+  padding: 0 8px; }
+
 .icon-btn-wrap {
   position: relative;
   display: inline-block;
@@ -424,6 +455,21 @@ header {
   white-space: nowrap;
   box-shadow: 0px 2px 8px #ccc;
   padding: 4px; }
+
+.link-btn {
+  width: 100%;
+  height: 100%; }
+
+/**************upload-btn******************/
+.upload-btn {
+  position: relative; }
+  .upload-btn input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0; }
 
 body {
   margin: 0; }
@@ -572,13 +618,31 @@ header {
 
 /****************Search List******************************/
 .ui-list {
-  line-height: 24px; }
+  line-height: 24px;
+  text-align: left; }
 
 .ui-list-head {
-  text-align: left;
   text-indent: 20px;
   background: -webkit-linear-gradient(top, #dcddde, #ecedee); }
 
 .search-wrap {
   width: 400px;
-  border: 1px solid #c9c9c9; }
+  border: 1px solid #c9c9c9;
+  height: 30px;
+  margin-bottom: 8px; }
+
+.search-input {
+  width: 100%;
+  height: 100%;
+  text-indent: 8px; }
+
+.search-res-row {
+  padding: 6px 20px; }
+
+.img-wrap {
+  width: 24px;
+  height: 24px; }
+
+.row-user-name {
+  width: 64px;
+  margin: 0 12px; }

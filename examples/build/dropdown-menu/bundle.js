@@ -1135,6 +1135,7 @@ module.exports = React.createClass({
 'use strict';
 
 var React = require('react');
+var eventsUtils = require('../utils/events');
 
 module.exports = React.createClass({
   displayName: 'exports',
@@ -1147,40 +1148,73 @@ module.exports = React.createClass({
 
   getDefaultProps: function getDefaultProps() {
     return {
+      customClass: '',
       defaultImg: '',
       realImg: ''
     };
   },
 
+  getInitialState: function getInitialState() {
+    return {
+      loaded: null
+    };
+  },
+
   componentDidMount: function componentDidMount() {
-    var img,
-        self = React.findDOMNode(this),
+    var self = this,
+        img,
         src = this.props.realImg;
     if (src) {
       img = document.createElement('img');
-      $(img).bind("load", function () {
-        self.parent().css('backgroundImage', 'url(' + src + ')  !important');
-        self.css('visibility', 'hidden');
-      }).bind('error', function () {
-        self.css('visibility', 'visible');
-      }).attr("src", src);
+      eventsUtils.on(img, 'load', function () {
+        self.setState({
+          loaded: 'success'
+        });
+      });
+
+      eventsUtils.on(img, 'error', function () {
+        self.setState({
+          loaded: 'failed'
+        });
+      });
+
+      img.setAttribute("src", src);
     }
   },
 
   render: function render() {
-    var props = this.props;
+    var props = this.props,
+        imgWrapStyle = {},
+        imgStyle = {};
+
+    if (this.state.loaded == 'success') {
+      imgWrapStyle = {
+        backgroundImage: 'url(' + props.realImg + ')'
+      };
+      imgStyle = {
+        visibility: 'hidden'
+      };
+    } else if (this.state.loaded == 'failed') {
+      imgStyle = {
+        visibility: 'visible'
+      };
+    }
 
     return React.createElement(
       'div',
-      { className: "img-wrap " + props.customClass },
+      {
+        className: "img-wrap " + props.customClass,
+        style: imgWrapStyle },
       React.createElement('img', {
+        ref: 'image',
         'data-real': props.realImg,
-        src: props.defaultImg })
+        src: props.defaultImg,
+        style: imgStyle })
     );
   }
 
 });
-},{"react":182}],12:[function(require,module,exports){
+},{"../utils/events":27,"react":182}],12:[function(require,module,exports){
 'use strict';
 
 module.exports = {

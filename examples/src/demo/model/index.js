@@ -171,123 +171,117 @@ module.exports = {
   ],
   searchList: [
     {
-      'name': 'tom',
-      'email': 'tom.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
-      'status': ''
-    },
-    {
-      'name': 'haihao',
-      'email': 'haihai.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
-      'status': ''
-    },
-    {
-      'name': 'chenchen',
-      'email': 'chenchen.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
-      'status': ''
-    },
-    {
-      'name': 'xping',
-      'email': 'xping.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
-      'status': ''
-    },
-    {
       'name': 'mike',
       'email': 'mike.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+      'avatar': '../images/icon.png',
       'status': ''
     },
     {
       'name': 'cristal',
       'email': 'cristal.123@gmail.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+      'avatar': '../images/icon.png',
       'status': ''
     },
     {
       'name': 'jorn',
       'email': 'jorn.123.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+      'avatar': '../images/icon.png',
+      'status': ''
+    },
+    {
+      'name': 'tom',
+      'email': 'tom.com',
+      'avatar': '../images/icon.png',
+      'status': ''
+    },
+    {
+      'name': 'chenchen',
+      'email': 'chenchen.com',
+      'avatar': '../images/icon.png',
+      'status': ''
+    },
+    {
+      'name': 'xping',
+      'email': 'xping.com',
+      'avatar': '../images/icon.png',
       'status': ''
     },
     {
       'name': 'mary',
       'email': 'mary@gmail.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+      'avatar': '../images/icon.png',
       'status': ''
     },
     {
       'name': 'fat',
       'email': 'fat@gmail.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+      'avatar': '../images/icon.png',
       'status': ''
     },
     {
       'name': 'sheep',
       'email': 'sheep@gmail.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+      'avatar': '../images/icon.png',
       'status': ''
     },
     {
       'name': 'pythom',
       'email': 'pdjha@qq.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+      'avatar': '../images/icon.png',
       'status': ''
     },
     {
       'name': 'ada',
       'email': 'ada@gmail.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+      'avatar': '../images/icon.png',
       'status': ''
     },
     {
       'name': 'alan',
       'email': 'alankdja@89.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+      'avatar': '../images/icon.png',
       'status': ''
     },
     {
       'name': 'barry',
       'email': 'barryjdajdhj@78.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+      'avatar': '../images/icon.png',
       'status': ''
     },
     {
       'name': 'beck',
       'email': 'beck@gmail.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+      'avatar': '../images/icon.png',
       'status': ''
     },
     {
       'name': 'amos',
       'email': 'amos@gmail.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+      'avatar': '../images/icon.png',
       'status': ''
     },
     {
       'name': 'angel',
       'email': 'angel@gmail.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+      'avatar': '../images/icon.png',
       'status': ''
     },
     {
       'name': 'cash',
       'email': 'cash@gmail.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+      'avatar': '../images/icon.png',
       'status': ''
     },
     {
       'name': 'christ',
       'email': 'christ@gmail.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+      'avatar': '../images/icon.png',
       'status': ''
     },
     {
       'name': 'yeo',
       'email': 'yeo@gmail.com',
-      'avatar': 'https://shimodev.com/static/unmd5/default-avatar-moke.png',
+      'avatar': '../images/icon.png',
       'status': ''
     }
   ]

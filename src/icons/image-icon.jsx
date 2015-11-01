@@ -10,24 +10,34 @@ module.exports = React.createClass({
 
   getDefaultProps: function(){
     return {
+      customClass: '',
       defaultImg: '',
       realImg: ''
     };
   },
 
+  getInitialState: function(){
+    return {
+      loaded: null
+    };
+  },
+
   componentDidMount: function(){
-    var img,
-      self = React.findDOMNode(this),
+    var self = this,
+      img,
       src = this.props.realImg;
     if(src){
       img = document.createElement('img');
       eventsUtils.on(img, 'load', function() {
-        self.style.backgroundImage = 'url('+src+')  !important';
-        self.style.visibility = 'hidden';
+        self.setState({
+          loaded: 'success'
+        });
       });
 
       eventsUtils.on(img, 'error', function(){
-        self.style.visibility = 'visible';
+        self.setState({
+          loaded: 'failed'
+        });
       });
 
       img.setAttribute("src", src);
@@ -35,13 +45,32 @@ module.exports = React.createClass({
   },
 
   render: function(){
-    var props = this.props;
+    var props = this.props,
+      imgWrapStyle = {},
+      imgStyle = {};
+
+    if(this.state.loaded == 'success'){
+      imgWrapStyle = {
+        backgroundImage: 'url('+props.realImg+')'
+      };
+      imgStyle = {
+        visibility: 'hidden'
+      };
+    }else if(this.state.loaded == 'failed'){
+      imgStyle = {
+        visibility: 'visible'
+      };
+    }
 
     return (
-      <div className={"img-wrap "+props.customClass} >
-        <img 
+      <div 
+          className={"img-wrap "+props.customClass}
+          style={imgWrapStyle} >
+        <img
+          ref="image"
           data-real={props.realImg}
-          src={props.defaultImg} />
+          src={props.defaultImg}
+          style={imgStyle} />
       </div>
     );
   }
