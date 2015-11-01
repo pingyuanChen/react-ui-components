@@ -20,6 +20,7 @@
   "dependencies": {
     "lodash": "^3.5.0",
     "react": ">=0.13",
+    "react-dynamic-list": "^0.1.7",
     "react-router": "^0.13.3",
     "react-tap-event-plugin": ">=0.1.3",
     "react-ui-components": "^0.5.0"
