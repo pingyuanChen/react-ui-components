@@ -171,30 +171,6 @@ module.exports = {
   ],
   searchList: [
     {
-      'name': 'tom',
-      'email': 'tom.com',
-      'avatar': '../images/icon.png',
-      'status': ''
-    },
-    {
-      'name': 'haihao',
-      'email': 'haihai.com',
-      'avatar': '../images/icon.png',
-      'status': ''
-    },
-    {
-      'name': 'chenchen',
-      'email': 'chenchen.com',
-      'avatar': '../images/icon.png',
-      'status': ''
-    },
-    {
-      'name': 'xping',
-      'email': 'xping.com',
-      'avatar': '../images/icon.png',
-      'status': ''
-    },
-    {
       'name': 'mike',
       'email': 'mike.com',
       'avatar': '../images/icon.png',
@@ -209,6 +185,24 @@ module.exports = {
     {
       'name': 'jorn',
       'email': 'jorn.123.com',
+      'avatar': '../images/icon.png',
+      'status': ''
+    },
+    {
+      'name': 'tom',
+      'email': 'tom.com',
+      'avatar': '../images/icon.png',
+      'status': ''
+    },
+    {
+      'name': 'chenchen',
+      'email': 'chenchen.com',
+      'avatar': '../images/icon.png',
+      'status': ''
+    },
+    {
+      'name': 'xping',
+      'email': 'xping.com',
       'avatar': '../images/icon.png',
       'status': ''
     },

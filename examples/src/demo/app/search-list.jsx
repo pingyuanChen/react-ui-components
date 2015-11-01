@@ -80,6 +80,7 @@ module.exports = React.createClass({
       itemKey = item[key];
       firstLetter = itemKey[0].toUpperCase();
       if(groups.indexOf(firstLetter) == -1){
+        groups.push(firstLetter);
         groupedData.push({
           name: firstLetter,
           items: [item]

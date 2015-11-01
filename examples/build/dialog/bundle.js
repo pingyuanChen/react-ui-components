@@ -1094,7 +1094,7 @@ module.exports = React.createClass({
 
     if (this.state.loaded == 'success') {
       imgWrapStyle = {
-        backgroundImage: 'url(' + props.realImg + ') !important'
+        backgroundImage: 'url(' + props.realImg + ')'
       };
       imgStyle = {
         visibility: 'hidden'

@@ -4156,7 +4156,7 @@ module.exports = React.createClass({
 
     if (this.state.loaded == 'success') {
       imgWrapStyle = {
-        backgroundImage: 'url(' + props.realImg + ') !important'
+        backgroundImage: 'url(' + props.realImg + ')'
       };
       imgStyle = {
         visibility: 'hidden'
@@ -25104,6 +25104,7 @@ module.exports = React.createClass({
       itemKey = item[key];
       firstLetter = itemKey[0].toUpperCase();
       if (groups.indexOf(firstLetter) == -1) {
+        groups.push(firstLetter);
         groupedData.push({
           name: firstLetter,
           items: [item]
@@ -25119,7 +25120,7 @@ module.exports = React.createClass({
       'div',
       { className: 'search-res-row' },
       React.createElement(ImageIcon, {
-        defaultImg: '../images/loading.gif',
+        defaultImg: './images/loading.gif',
         realImg: data.avatar }),
       React.createElement(
         'span',
@@ -25430,104 +25431,99 @@ module.exports = {
     iconBtnClass: 'fa fa-align-justify'
   }],
   searchList: [{
-    'name': 'tom',
-    'email': 'tom.com',
-    'avatar': '../images/icon.png',
-    'status': ''
-  }, {
-    'name': 'haihao',
-    'email': 'haihai.com',
-    'avatar': '../images/icon.png',
-    'status': ''
-  }, {
-    'name': 'chenchen',
-    'email': 'chenchen.com',
-    'avatar': '../images/icon.png',
-    'status': ''
-  }, {
-    'name': 'xping',
-    'email': 'xping.com',
-    'avatar': '../images/icon.png',
-    'status': ''
-  }, {
     'name': 'mike',
     'email': 'mike.com',
-    'avatar': '../images/icon.png',
+    'avatar': './images/icon.png',
     'status': ''
   }, {
     'name': 'cristal',
     'email': 'cristal.123@gmail.com',
-    'avatar': '../images/icon.png',
+    'avatar': './images/icon.png',
     'status': ''
   }, {
     'name': 'jorn',
     'email': 'jorn.123.com',
-    'avatar': '../images/icon.png',
+    'avatar': './images/icon.png',
+    'status': ''
+  }, {
+    'name': 'tom',
+    'email': 'tom.com',
+    'avatar': './images/icon.png',
+    'status': ''
+  }, {
+    'name': 'chenchen',
+    'email': 'chenchen.com',
+    'avatar': './images/icon.png',
+    'status': ''
+  }, {
+    'name': 'xping',
+    'email': 'xping.com',
+    'avatar': './images/icon.png',
     'status': ''
   }, {
     'name': 'mary',
     'email': 'mary@gmail.com',
-    'avatar': '../images/icon.png',
+    'avatar': './images/icon.png',
     'status': ''
   }, {
     'name': 'fat',
     'email': 'fat@gmail.com',
-    'avatar': '../images/icon.png',
+    'avatar': './images/icon.png',
     'status': ''
   }, {
     'name': 'sheep',
     'email': 'sheep@gmail.com',
-    'avatar': '../images/icon.png',
+    'avatar': './images/icon.png',
     'status': ''
   }, {
     'name': 'pythom',
     'email': 'pdjha@qq.com',
-    'avatar': '../images/icon.png',
+    'avatar': './images/icon.png',
     'status': ''
   }, {
     'name': 'ada',
     'email': 'ada@gmail.com',
-    'avatar': '../images/icon.png',
+    'avatar': './images/icon.png',
     'status': ''
   }, {
     'name': 'alan',
     'email': 'alankdja@89.com',
-    'avatar': '../images/icon.png',
+    'avatar': './images/icon.png',
     'status': ''
   }, {
     'name': 'barry',
     'email': 'barryjdajdhj@78.com',
-    'avatar': '../images/icon.png',
+    'avatar': './images/icon.png',
     'status': ''
   }, {
     'name': 'beck',
     'email': 'beck@gmail.com',
-    'avatar': '../images/icon.png',
+    'avatar': './images/icon.png',
     'status': ''
   }, {
     'name': 'amos',
     'email': 'amos@gmail.com',
-    'avatar': '../images/icon.png',
+    'avatar': './images/icon.png',
     'status': ''
   }, {
     'name': 'angel',
     'email': 'angel@gmail.com',
-    'avatar': '../images/icon.png',
+    'avatar': './images/icon.png',
     'status': ''
   }, {
     'name': 'cash',
     'email': 'cash@gmail.com',
-    'avatar': '../images/icon.png',
+    'avatar': './images/icon.png',
     'status': ''
   }, {
     'name': 'christ',
     'email': 'christ@gmail.com',
-    'avatar': '../images/icon.png',
+    'avatar': './images/icon.png',
     'status': ''
   }, {
     'name': 'yeo',
     'email': 'yeo@gmail.com',
-    'avatar': '../images/icon.png',
+    'avatar': './images/icon.png',
     'status': ''
   }]
 };
