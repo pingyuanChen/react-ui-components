@@ -1,12 +1,13 @@
 var React = require('react');
 var Components = require('react-ui-components');
 var SearchInput = Components.SearchInput;
+var ImageIcon = Components.ImageIcon;
 var List = require('react-dynamic-list');
 var model = require('../model/index');
 
 module.exports = React.createClass({
   getInitialState: function(){
-    var groupedData = this._groupList(model.searchList);
+    var groupedData = this._groupList(model.searchList, 'name');
     return {
       searchList: groupedData,
       adapter: {
@@ -19,7 +20,7 @@ module.exports = React.createClass({
     return (
       <div className="search-list">
         <SearchInput
-          placeholder=""
+          placeholder="Search By Name"
           onSearch={this._onSearch} >
         </SearchInput>
         <List
@@ -43,7 +44,7 @@ module.exports = React.createClass({
       });
     }else{
       this.setState({
-        searchList: this._groupList(model.searchList),
+        searchList: this._groupList(model.searchList, 'name'),
         adapter: {
           type: 'group'
         }
@@ -55,9 +56,9 @@ module.exports = React.createClass({
     var filteredData,
       itemName;
     keyword = keyword.toLowerCase();
-    filteredData = _.filter(lists, function(item){
+    filteredData = lists.filter(function(item){
       itemName = item.name.toLowerCase();
-      if(itemName.indexOf(keyword)){
+      if(itemName.indexOf(keyword) > -1){
         return true;
       }
     });
@@ -90,7 +91,19 @@ module.exports = React.createClass({
 
   _createRowDom: function(position, data){
     var innerHTML = (data && data.name) || '';
-    return (<div className=''>{innerHTML}</div>);
+    return (
+      <div className="search-res-row">
+        <ImageIcon 
+         defaultImg={data.avatar}
+         realImg={data.avatar} />
+        <span className="row-user-name">
+          {data.name}
+        </span>
+        <span className="row-user-email">
+          {data.email}
+        </span>
+      </div>
+    );
   },
 
   _createHeadDom: function(position, data){
