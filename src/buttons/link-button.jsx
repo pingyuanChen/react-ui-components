@@ -5,6 +5,7 @@ module.exports = React.createClass({
   propTypes: {
     customClass: React.PropTypes.string,
     disabled: React.PropTypes.bool,
+    newTab: React.PropTypes.bool,
     label: React.PropTypes.string,
     btnTpl: React.PropTypes.func,
     href: React.PropTypes.string.isRequired,
@@ -13,7 +14,8 @@ module.exports = React.createClass({
 
   getDefaultProps: function(){
     return {
-      customClass: ''
+      customClass: '',
+      newTab: false
     };
   },
 
@@ -35,7 +37,7 @@ module.exports = React.createClass({
         customClass={props.customClass}
         disabled={props.disabled}
         onTap={props.onTap} >
-        <a className="link-btn" href={props.href}>
+        <a className="link-btn" href={props.href} target={props.newTab ? '_blank' : '_self'}>
           {btnChilden}
         </a>
       </SimpleButton>

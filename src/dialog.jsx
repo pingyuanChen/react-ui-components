@@ -72,15 +72,19 @@ module.exports = React.createClass({
     if(props.hasActions){
       for(var i=0,l=actions.length; i<l; i++){
         item = actions[i];
-        actionEle = (
-          <SimpleButton 
-            key={i}
-            customClass={item.customClass || ''}
-            disabled={item.disabled || false}
-            onTap={item.onTap || this.close}
-            label={item.label} >
-          </SimpleButton>
-        );
+        if(item.tpl){
+          actionEle = item.tpl(item);
+        }else{
+          actionEle = (
+            <SimpleButton 
+              key={i}
+              customClass={item.customClass || ''}
+              disabled={item.disabled || false}
+              onTap={item.onTap || this.close}
+              label={item.label} >
+            </SimpleButton>
+          );
+        }
         actionEles.push(actionEle);
       }
     }
@@ -102,6 +106,7 @@ module.exports = React.createClass({
               {props.bodyTpl ? props.bodyTpl(props.body) : props.body}
             </div>
             <div className="dialog-foot">
+              {props.footTpl ? props.footTpl() : ''}
               {actionEles}
             </div>
           </div>
