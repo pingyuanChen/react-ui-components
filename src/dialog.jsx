@@ -24,6 +24,7 @@ module.exports = React.createClass({
     return {
       hasMask: true,
       hasActions: true,
+      customClass: '',
       actions: [
         {
           customClass: 'dialog-submit',
@@ -96,7 +97,7 @@ module.exports = React.createClass({
     }
 
     return (
-      <div className="dialog-wrap" style={dialogWrapStyle} >
+      <div className={"dialog-wrap "+props.customClass} style={dialogWrapStyle} >
         {this.state.open &&
           <div ref="dialog" className="dialog">
             <div className="dialog-head">
