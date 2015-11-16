@@ -10,13 +10,13 @@
     "prepublish": "npm run build"
   },
   "keywords": [
+    "react components",
+    "react ui",
+    "react ui components",
     "react",
     "react-ui",
     "react-components",
-    "react-ui-components",
-    "react ui",
-    "react components",
-    "react ui components"
+    "react-ui-components"
   ],
   "repository": {
     "type": "git",
