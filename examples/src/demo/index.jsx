@@ -1,11 +1,10 @@
 var React                = require('react');
 var ReactDOM             = require('react-dom');
 var injectTapEventPlugin = require('react-tap-event-plugin');
-var Router               = require('react-router');
-var DefaultRoute         = Router.DefaultRoute;
-var Link                 = Router.Link;
-var Route                = Router.Route;
-var RouteHandler         = Router.RouteHandler;
+var ReactRouter          = require('react-router');
+var Router               = ReactRouter.Router;
+var Route                = ReactRouter.Route;
+var IndexRoute           = ReactRouter.IndexRoute;
 
 var model                = require('./model/index');
 var Sidebar              = require('./app/sidebar.jsx');
@@ -27,7 +26,7 @@ var App = React.createClass({
         <Sidebar sidebarData={model.sidebarData}></Sidebar>
 
         <div className="main-content">
-          <RouteHandler />
+          {this.props.children}
         </div>
       </div>
     );
@@ -36,21 +35,19 @@ var App = React.createClass({
 
 
 var routes = (
-  <Route name="app" path="/" handler={App}>
-    <Route name="buttons" path="/buttons" handler={Buttons} />
-    <Route name="dialog" path="/dialog" handler={Dialog} />
-    <Route name="icon-button" path="/icon-button" handler={IconButtons} />
-    <Route name="dropdown-menu" path="/dropdown-menu" handler={DropdownMenu} />
-    <Route name="toast" path="/toast" handler={Toast} />
-    <Route name="tab" path="/tab" handler={Tab} />
-    <Route name="search" path="/search" handler={Search} />
-    <DefaultRoute handler={Buttons}/>
+  <Route path="/" component={App}>
+    <IndexRoute component={Buttons} />
+    <Route path="buttons" component={Buttons} />
+    <Route path="dialog" component={Dialog} />
+    <Route path="icon-button" component={IconButtons} />
+    <Route path="dropdown-menu" component={DropdownMenu} />
+    <Route path="toast" component={Toast} />
+    <Route path="tab" component={Tab} />
+    <Route path="search" component={Search} />
   </Route>
 );
 
-Router.run(routes, function(Handler){
-  ReactDOM.render(<Handler />, document.getElementById('main'))
-});
+ReactDOM.render(<Router>{routes}</Router>, document.getElementById('main'))
 
 
 

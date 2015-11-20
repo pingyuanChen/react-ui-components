@@ -1,4 +1,5 @@
-var React = require('react');
+var React    = require('react');
+var ReactDOM = require('react-dom');
 
 module.exports = React.createClass({
   propTypes: {
@@ -39,7 +40,7 @@ module.exports = React.createClass({
     if (this._timeoutId) clearTimeout(this._timeoutId);
 
     this._timeoutId = setTimeout(function(){
-      React.unmountComponentAtNode(React.findDOMNode(this).parentNode);
+      ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(this).parentNode);
     }.bind(this), this.props.timeout);
   }
 });

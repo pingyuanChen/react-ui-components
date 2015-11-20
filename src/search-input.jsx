@@ -38,7 +38,7 @@ module.exports = React.createClass({
           <input 
             ref="searchInput"
             type="text" 
-            autocomplete="off"
+            autoComplete="off"
             className="search-input"
             placeholder={props.placeholder}
             onKeyDown={this._onKeyDown} />

@@ -84,11 +84,13 @@ header {
   width: 114px;
   margin-top: 16px;
   margin-left: -16px; }
+
 .dropdown-menu-color .menu-item {
   float: left;
   width: 15px;
   height: 15px;
   padding: 2px; }
+
 .dropdown-menu-color .menu-item-selected {
   background: #fff; }
 
