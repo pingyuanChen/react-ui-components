@@ -2229,7 +2229,8 @@ module.exports = React.createClass({displayName: "exports",
         return (
           React.createElement(ListGroup, React.__spread({}, 
             props, 
-            {groupIndex: i, 
+            {key: i, 
+            groupIndex: i, 
             groupItem: item}))
         );
       });
@@ -2239,7 +2240,8 @@ module.exports = React.createClass({displayName: "exports",
         return (
           React.createElement(ListRow, React.__spread({}, 
             props, 
-            {groupIndex: 0, 
+            {key: i, 
+            groupIndex: 0, 
             rowIndex: i, 
             rowItem: item}))
         );
@@ -2269,7 +2271,8 @@ module.exports = React.createClass({displayName: "exports",
       return (
           React.createElement(ListRow, React.__spread({}, 
             props, 
-            {groupIndex: props.groupIndex, 
+            {key: i, 
+            groupIndex: props.groupIndex, 
             rowIndex: i, 
             rowItem: item}))
         );
@@ -5954,7 +5957,7 @@ module.exports = React.createClass({
         React.createElement('input', {
           ref: 'searchInput',
           type: 'text',
-          autocomplete: 'off',
+          autoComplete: 'off',
           className: 'search-input',
           placeholder: props.placeholder,
           onKeyDown: this._onKeyDown })
@@ -6189,6 +6192,7 @@ module.exports = React.createClass({
 'use strict';
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 
 module.exports = React.createClass({
   displayName: 'exports',
@@ -6231,11 +6235,11 @@ module.exports = React.createClass({
     if (this._timeoutId) clearTimeout(this._timeoutId);
 
     this._timeoutId = setTimeout((function () {
-      React.unmountComponentAtNode(React.findDOMNode(this).parentNode);
+      ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(this).parentNode);
     }).bind(this), this.props.timeout);
   }
 });
-},{"react":239}],81:[function(require,module,exports){
+},{"react":239,"react-dom":28}],81:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -25726,6 +25730,7 @@ module.exports = React.createClass({
 'use strict';
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var Components = require('react-ui-components');
 var Toast = Components.Toast;
 var SimpleButton = Components.SimpleButton;
@@ -25760,22 +25765,22 @@ module.exports = React.createClass({
   _onTap: function _onTap(e) {
     switch (e.target.innerHTML) {
       case 'Default Toast':
-        React.render(React.createElement(Toast, { msg: 'Nullam id dolor id nibh ultricies vehicula ut id elit.' }), document.getElementById('demo-toast-wrap'));
+        ReactDOM.render(React.createElement(Toast, { msg: 'Nullam id dolor id nibh ultricies vehicula ut id elit.' }), document.getElementById('demo-toast-wrap'));
         break;
       case 'Success Toast':
-        React.render(React.createElement(Toast, { type: 'success', msg: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula.' }), document.getElementById('demo-toast-wrap'));
+        ReactDOM.render(React.createElement(Toast, { type: 'success', msg: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula.' }), document.getElementById('demo-toast-wrap'));
         break;
       case 'Warning Toast':
-        React.render(React.createElement(Toast, { type: 'warning', msg: 'Maecenas sed diam eget risus varius blandit sit amet non magna.' }), document.getElementById('demo-toast-wrap'));
+        ReactDOM.render(React.createElement(Toast, { type: 'warning', msg: 'Maecenas sed diam eget risus varius blandit sit amet non magna.' }), document.getElementById('demo-toast-wrap'));
         break;
       case 'Error Toast':
-        React.render(React.createElement(Toast, { type: 'error', msg: 'Etiam porta sem malesuada magna mollis euismod.' }), document.getElementById('demo-toast-wrap'));
+        ReactDOM.render(React.createElement(Toast, { type: 'error', msg: 'Etiam porta sem malesuada magna mollis euismod.' }), document.getElementById('demo-toast-wrap'));
         break;
     }
   }
 });
 
-},{"react":239,"react-ui-components":68}],248:[function(require,module,exports){
+},{"react":239,"react-dom":28,"react-ui-components":68}],248:[function(require,module,exports){
 'use strict';
 
 module.exports = {
