@@ -1,7 +1,8 @@
-var React = require('react');
+var React                = require('react');
+var ReactDOM             = require('react-dom');
 var injectTapEventPlugin = require('react-tap-event-plugin');
-var Components = require('react-ui-components');
-var IconButton = Components.IconButton;
+var Components           = require('react-ui-components');
+var IconButton           = Components.IconButton;
 
 injectTapEventPlugin();
 
@@ -67,7 +68,7 @@ var Main = React.createClass({
 });
 
 
-React.render(
+ReactDOM.render(
   <Main icons={icons}></Main>,
   document.getElementById('main')
 );

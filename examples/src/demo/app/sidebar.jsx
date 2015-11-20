@@ -1,11 +1,11 @@
-var React = require('react');
-var Router = require('react-router');
+var React        = require('react');
+var Router       = require('react-router');
 var DefaultRoute = Router.DefaultRoute;
-var Link = Router.Link;
-var Route = Router.Route;
+var Link         = Router.Link;
+var Route        = Router.Route;
 var RouteHandler = Router.RouteHandler;
-var Components = require('react-ui-components');
-var Menu = Components.Menu;
+var Components   = require('react-ui-components');
+var Menu         = Components.Menu;
 
 
 

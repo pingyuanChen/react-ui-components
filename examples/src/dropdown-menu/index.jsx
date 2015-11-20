@@ -1,7 +1,8 @@
-var React = require('react');
+var React                = require('react');
+var ReactDOM             = require('react-dom');
 var injectTapEventPlugin = require('react-tap-event-plugin');
-var Components = require('react-ui-components');
-var DropdownMenu = Components.DropdownMenu;
+var Components           = require('react-ui-components');
+var DropdownMenu         = Components.DropdownMenu;
 
 injectTapEventPlugin();
 
@@ -201,7 +202,7 @@ var Main = React.createClass({
 });
 
 
-React.render(
+ReactDOM.render(
   <Main />,
   document.getElementById('main')
 );

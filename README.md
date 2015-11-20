@@ -1,5 +1,5 @@
 # react-ui-components
-A collection of UI components for React
+React Components Library
 
 ## Install
 To install the latest release:

@@ -1,4 +1,4 @@
-var React = require('react');
+var React    = require('react');
 var MenuItem = require('./menu-item');
 
 module.exports = React.createClass({

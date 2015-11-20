@@ -1,8 +1,8 @@
-var React = require('react');
-var Components = require('react-ui-components');
+var React        = require('react');
+var Components   = require('react-ui-components');
 var DropdownMenu = Components.DropdownMenu;
 
-var model = require('../model/index');
+var model        = require('../model/index');
 
 
 var itemTpl = function(index, data, selected, displayKey, valKey){

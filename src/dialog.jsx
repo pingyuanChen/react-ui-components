@@ -1,7 +1,8 @@
-var React = require('react');
+var React          = require('react');
+var ReactDOM       = require('react-dom');
 var WindowListener = require('./mixins/window-listener');
-var SimpleButton = require('./buttons/simple-button');
-var Mask = require('./mask');
+var SimpleButton   = require('./buttons/simple-button');
+var Mask           = require('./mask');
 
 module.exports = React.createClass({
   mixins: [WindowListener],
@@ -146,7 +147,7 @@ module.exports = React.createClass({
 
   _onResize: function(){
     if(this.state.open){
-      var dialogWin = this.refs.dialog.getDOMNode(),
+      var dialogWin = ReactDOM.findDOMNode(this.refs.dialog),
         dialogWinWidth = dialogWin.offsetWidth,
         dialogWinHeight = dialogWin.offsetHeight;
       dialogWin.style.marginLeft = -dialogWinWidth/2 + 'px';

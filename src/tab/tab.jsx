@@ -1,6 +1,6 @@
-var React = require('react');
+var React          = require('react');
 
-var TabHeadItem = require('./tab-head-item');
+var TabHeadItem    = require('./tab-head-item');
 var TabContentItem = require('./tab-content-item');
 
 module.exports = React.createClass({

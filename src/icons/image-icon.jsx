@@ -1,4 +1,4 @@
-var React = require('react');
+var React       = require('react');
 var eventsUtils = require('../utils/events');
 
 module.exports = React.createClass({

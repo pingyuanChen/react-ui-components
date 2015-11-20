@@ -1,5 +1,6 @@
-var React = require('react');
-var Menu = require('./menu');
+var React         = require('react');
+var ReactDOM      = require('react-dom');
+var Menu          = require('./menu');
 var DelegateClick = require('../mixins/delegate-click');
 
 module.exports = React.createClass({
@@ -116,8 +117,8 @@ module.exports = React.createClass({
   },
 
   _setWidth: function(){
-    var dMenuEle = React.findDOMNode(this),
-      menuWrap = React.findDOMNode(this.refs.menuWrap);
+    var dMenuEle = ReactDOM.findDOMNode(this),
+      menuWrap = ReactDOM.findDOMNode(this.refs.menuWrap);
     dMenuEle.style.width = menuWrap.offsetWidth + 'px';
   },
 

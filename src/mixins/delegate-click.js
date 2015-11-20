@@ -1,6 +1,7 @@
-var React = require('react');
+var React       = require('react');
+var ReactDOM    = require('react-dom');
 var eventsUtils = require('../utils/events');
-var domUtils = require('../utils/dom');
+var domUtils    = require('../utils/dom');
 
 module.exports = {
   componentDidMount: function(){
@@ -12,7 +13,7 @@ module.exports = {
   },
 
   _checkClick: function(e){
-    var el = React.findDOMNode(this),
+    var el = ReactDOM.findDOMNode(this),
       target = e.target;
 
     if(target != el && !domUtils.isDescendant(el, target) && document.documentElement.contains(target)){

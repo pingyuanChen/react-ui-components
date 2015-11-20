@@ -1,20 +1,21 @@
-var React = require('react');
+var React                = require('react');
+var ReactDOM             = require('react-dom');
 var injectTapEventPlugin = require('react-tap-event-plugin');
-var Router = require('react-router');
-var DefaultRoute = Router.DefaultRoute;
-var Link = Router.Link;
-var Route = Router.Route;
-var RouteHandler = Router.RouteHandler;
+var Router               = require('react-router');
+var DefaultRoute         = Router.DefaultRoute;
+var Link                 = Router.Link;
+var Route                = Router.Route;
+var RouteHandler         = Router.RouteHandler;
 
-var model = require('./model/index');
-var Sidebar = require('./app/sidebar.jsx');
-var Buttons = require('./app/buttons.jsx');
-var Dialog = require('./app/dialog.jsx');
-var IconButtons = require('./app/icon-button.jsx');
-var DropdownMenu = require('./app/dropdown-menu.jsx');
-var Toast = require('./app/toast.jsx');
-var Tab = require('./app/tab.jsx');
-var Search = require('./app/search-list.jsx');
+var model                = require('./model/index');
+var Sidebar              = require('./app/sidebar.jsx');
+var Buttons              = require('./app/buttons.jsx');
+var Dialog               = require('./app/dialog.jsx');
+var IconButtons          = require('./app/icon-button.jsx');
+var DropdownMenu         = require('./app/dropdown-menu.jsx');
+var Toast                = require('./app/toast.jsx');
+var Tab                  = require('./app/tab.jsx');
+var Search               = require('./app/search-list.jsx');
 
 
 injectTapEventPlugin();
@@ -48,7 +49,7 @@ var routes = (
 );
 
 Router.run(routes, function(Handler){
-  React.render(<Handler />, document.getElementById('main'))
+  ReactDOM.render(<Handler />, document.getElementById('main'))
 });
 
 

@@ -1,8 +1,9 @@
-var React = require('react');
+var React                = require('react');
+var ReactDOM             = require('react-dom');
 var injectTapEventPlugin = require('react-tap-event-plugin');
-var Components = require('react-ui-components');
-var Dialog = Components.Dialog;
-var SimpleButton = Components.SimpleButton;
+var Components           = require('react-ui-components');
+var Dialog               = Components.Dialog;
+var SimpleButton         = Components.SimpleButton;
 
 injectTapEventPlugin();
 
@@ -576,7 +577,7 @@ FABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAH/2Q=='/>
 });
 
 
-React.render(
+ReactDOM.render(
   <Main />,
   document.getElementById('main')
 );

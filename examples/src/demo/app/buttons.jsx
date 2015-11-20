@@ -1,7 +1,7 @@
-var React = require('react');
-var Components = require('react-ui-components');
+var React        = require('react');
+var Components   = require('react-ui-components');
 var SimpleButton = Components.SimpleButton;
-var LinkButton = Components.LinkButton;
+var LinkButton   = Components.LinkButton;
 
 module.exports = React.createClass({
   render: function(){

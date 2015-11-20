@@ -1,4 +1,4 @@
-var React = require('react');
+var React        = require('react');
 var SimpleButton = require('./simple-button');
 
 module.exports = React.createClass({

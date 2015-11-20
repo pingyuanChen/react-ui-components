@@ -1,9 +1,9 @@
-var React = require('react');
-var Components = require('react-ui-components');
+var React       = require('react');
+var Components  = require('react-ui-components');
 var SearchInput = Components.SearchInput;
-var ImageIcon = Components.ImageIcon;
-var List = require('react-dynamic-list');
-var model = require('../model/index');
+var ImageIcon   = Components.ImageIcon;
+var List        = require('react-dynamic-list');
+var model       = require('../model/index');
 
 module.exports = React.createClass({
   getInitialState: function(){

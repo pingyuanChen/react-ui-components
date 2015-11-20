@@ -1,6 +1,6 @@
-var React = require('react');
-var Components = require('react-ui-components');
-var Dialog = Components.Dialog;
+var React        = require('react');
+var Components   = require('react-ui-components');
+var Dialog       = Components.Dialog;
 var SimpleButton = Components.SimpleButton;
 
 module.exports = React.createClass({

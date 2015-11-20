@@ -1,7 +1,7 @@
-var React = require('react');
+var React      = require('react');
 var Components = require('react-ui-components');
-var Tab = Components.Tab;
-var TabItem = Components.TabItem;
+var Tab        = Components.Tab;
+var TabItem    = Components.TabItem;
 
 module.exports = React.createClass({
   render: function(){

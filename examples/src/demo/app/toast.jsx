@@ -1,6 +1,6 @@
-var React = require('react');
-var Components = require('react-ui-components');
-var Toast = Components.Toast;
+var React        = require('react');
+var Components   = require('react-ui-components');
+var Toast        = Components.Toast;
 var SimpleButton = Components.SimpleButton;
 
 module.exports = React.createClass({

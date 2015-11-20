@@ -1,4 +1,5 @@
-var React = require('react');
+var React    = require('react');
+var ReactDOM = require('react-dom');
 
 module.exports = React.createClass({
   propTypes: {
@@ -64,7 +65,7 @@ module.exports = React.createClass({
 
   _goSearch: function(e){
     var inputEle, keyword;
-    inputEle = React.findDOMNode(this.refs.searchInput);
+    inputEle = ReactDOM.findDOMNode(this.refs.searchInput);
     keyword = inputEle.value;
     if(this.props.onSearch){
       this.props.onSearch(keyword, e);
@@ -73,7 +74,7 @@ module.exports = React.createClass({
 
   _setFocus: function(){
     var inputEle;
-    inputEle = React.findDOMNode(this.refs.searchInput);
+    inputEle = ReactDOM.findDOMNode(this.refs.searchInput);
     inputEle.focus();
   }
 

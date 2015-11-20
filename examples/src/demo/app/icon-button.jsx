@@ -1,8 +1,8 @@
-var React = require('react');
+var React      = require('react');
 var Components = require('react-ui-components');
 var IconButton = Components.IconButton;
 
-var model = require('../model/index');
+var model      = require('../model/index');
 
 
 module.exports = React.createClass({
