@@ -15,7 +15,8 @@ module.exports = React.createClass({
     selectedIndex: React.PropTypes.number,
     onMenuChange: React.PropTypes.func,
     forceTap: React.PropTypes.bool,  //force trigger onMenuChange unconditional
-    tooltip: React.PropTypes.string
+    tooltip: React.PropTypes.string,
+    tipClass: React.PropTypes.string,
   },
 
   getDefaultProps: function(){
@@ -23,6 +24,7 @@ module.exports = React.createClass({
       hasMask: false,
       autoWidth: false,
       tooltip: '',
+      tipClass: '',
       displayKey: 'text',  //the value of displayKey for displaying
       valKey: 'value',  //the value of valKey may be for being sended to sever
       itemTpl: function(index, data, displayKey, valKey){
@@ -70,7 +72,8 @@ module.exports = React.createClass({
         <Tooltip
           ref="tooltip"
           tip={props.tooltip}
-          isShow={this.state.isShowTip} >
+          isShow={this.state.isShowTip}
+          customClass={props.tipClass} >
         </Tooltip>
       );
     }
