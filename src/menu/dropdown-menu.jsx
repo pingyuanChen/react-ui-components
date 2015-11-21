@@ -1,6 +1,7 @@
 var React         = require('react');
 var ReactDOM      = require('react-dom');
 var Menu          = require('./menu');
+var Tooltip       = require('../tooltip');
 var DelegateClick = require('../mixins/delegate-click');
 
 module.exports = React.createClass({
@@ -13,13 +14,15 @@ module.exports = React.createClass({
     selectedTpl: React.PropTypes.func,   //custom template for selected item showing
     selectedIndex: React.PropTypes.number,
     onMenuChange: React.PropTypes.func,
-    forceTap: React.PropTypes.bool  //force trigger onMenuChange unconditional
+    forceTap: React.PropTypes.bool,  //force trigger onMenuChange unconditional
+    tooltip: React.PropTypes.string
   },
 
   getDefaultProps: function(){
     return {
       hasMask: false,
       autoWidth: false,
+      tooltip: '',
       displayKey: 'text',  //the value of displayKey for displaying
       valKey: 'value',  //the value of valKey may be for being sended to sever
       itemTpl: function(index, data, displayKey, valKey){
@@ -57,12 +60,27 @@ module.exports = React.createClass({
   render: function(){
     var props = this.props,
       showClassName = this.state.open ? "" : "unactive",
-      wrapClassName = props.wrapClassName+' d-menu-wrap '+showClassName;
+      wrapClassName = props.wrapClassName+' d-menu-wrap '+showClassName,
+      tooltipEle, 
+      hoveredClass = this.state.hovered ? 'hovered' : '';
+    if(props.tooltip){
+      tooltipEle = (
+        <Tooltip
+          ref="tooltip"
+          tip={props.tooltip}
+          isShow={this.state.isShowTip} >
+        </Tooltip>
+      );
+    }
 
     return (
-      <div className={wrapClassName}>
+      <div 
+        className={wrapClassName}
+        onMouseEnter={this._handleMouseEnter}
+        onMouseLeave={this._handleMouseLeave} >
         <div className="d-menu-display-wrap" onTouchTap={this._onToggleMenu}>
           {props.selectedTpl(this.state.selectedIndex, props.menuItems[this.state.selectedIndex], props.displayKey, props.valKey)}
+          {tooltipEle}
         </div>
         <Menu
           ref="menuWrap"
@@ -125,6 +143,20 @@ module.exports = React.createClass({
   _setSelectedIndex: function(selectedIndex){
     this.setState({
       selectedIndex: selectedIndex
+    });
+  },
+
+  _handleMouseEnter: function(e){
+    this.setState({
+      isShowTip: true,
+      hovered: true
+    });
+  },
+
+  _handleMouseLeave: function(e){
+    this.setState({
+      isShowTip: false,
+      hovered: false
     });
   }
 });
