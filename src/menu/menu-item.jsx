@@ -19,6 +19,12 @@ module.exports = React.createClass({
     };
   },
 
+  getInitialState: function(){
+    return {
+      hovered: false
+    };
+  },
+
   render: function(){
     var props = this.props,
       itemClassName = 'menu-item',

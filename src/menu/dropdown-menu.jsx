@@ -40,7 +40,9 @@ module.exports = React.createClass({
   getInitialState: function(){
     return {
       open: false,   
-      selectedIndex: this.props.selectedIndex || 0
+      selectedIndex: this.props.selectedIndex || 0,
+      isShowTip: false,
+      hovered: false,
     };
   },
 
