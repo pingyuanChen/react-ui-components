@@ -115,6 +115,7 @@ module.exports = React.createClass({
 
   _onToggleMenu: function(){
     this.setState({
+      isShowTip: this.state.open,
       open: !this.state.open
     });
   },
@@ -153,7 +154,7 @@ module.exports = React.createClass({
 
   _handleMouseEnter: function(e){
     this.setState({
-      isShowTip: true,
+      isShowTip: this.state.open ? false : true,
       hovered: true
     });
   },
