@@ -29,15 +29,19 @@ module.exports = React.createClass({
     if(src){
       img = document.createElement('img');
       eventsUtils.on(img, 'load', function() {
-        self.setState({
-          loaded: 'success'
-        });
+        if(self.isMounted()) {
+          self.setState({
+            loaded: 'success'
+          });
+        }
       });
 
       eventsUtils.on(img, 'error', function(){
-        self.setState({
-          loaded: 'failed'
-        });
+        if(self.isMounted()) {
+          self.setState({
+            loaded: 'failed'
+          });
+        }
       });
 
       img.setAttribute("src", src);
