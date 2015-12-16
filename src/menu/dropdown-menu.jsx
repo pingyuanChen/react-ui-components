@@ -115,8 +115,8 @@ module.exports = React.createClass({
 
   _onToggleMenu: function(){
     this.setState({
-      isShowTip: this.state.open,
-      open: !this.state.open
+      open: !this.state.open,
+      isShowTip: this.state.open
     });
   },
 
