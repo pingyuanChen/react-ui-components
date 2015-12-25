@@ -125,11 +125,11 @@ module.exports = React.createClass({
   },
 
   show: function(){
-    this.setState({open: true}, this.props._onShow);
+    this.setState({open: true}, this._onShow);
   },
 
   close: function(){
-    this.setState({open: false}, this.props._onClose);
+    this.setState({open: false}, this._onClose);
   },
 
   _onShow: function(){
