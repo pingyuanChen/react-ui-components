@@ -67,8 +67,7 @@ module.exports = React.createClass({
       showClassName = this.state.open ? "" : "unactive",
       wrapClassName = props.wrapClassName+' d-menu-wrap '+showClassName,
       tooltipEle, 
-      hoveredClass = this.state.hovered ? 'hovered' : '',
-      menuWrapDom;
+      hoveredClass = this.state.hovered ? 'hovered' : '';
     if(props.tooltip){
       tooltipEle = (
         <Tooltip
@@ -77,34 +76,6 @@ module.exports = React.createClass({
           isShow={this.state.isShowTip}
           customClass={props.tipClass} >
         </Tooltip>
-      );
-    }
-
-    if(props.isScroll){
-      menuWrapDom = (
-        <div className="d-menu-scroll-wrap">
-          <Menu
-            ref="menuWrap"
-            menuItems={props.menuItems}
-            displayKey={props.displayKey}
-            valKey={props.valKey}
-            selectedIndex={this.state.selectedIndex}
-            itemTpl={props.itemTpl}
-            onItemTap={this._onItemTap} >
-          </Menu>
-        </div>
-      );
-    }else{
-      menuWrapDom = (
-        <Menu
-          ref="menuWrap"
-          menuItems={props.menuItems}
-          displayKey={props.displayKey}
-          valKey={props.valKey}
-          selectedIndex={this.state.selectedIndex}
-          itemTpl={props.itemTpl}
-          onItemTap={this._onItemTap} >
-        </Menu>
       );
     }
 
@@ -117,7 +88,16 @@ module.exports = React.createClass({
           {props.selectedTpl(this.state.selectedIndex, props.menuItems[this.state.selectedIndex], props.displayKey, props.valKey)}
           {tooltipEle}
         </div>
-        {menuWrapDom}
+        <Menu
+          ref="menuWrap"
+          menuItems={props.menuItems}
+          displayKey={props.displayKey}
+          valKey={props.valKey}
+          isScroll={props.isScroll}
+          selectedIndex={this.state.selectedIndex}
+          itemTpl={props.itemTpl}
+          onItemTap={this._onItemTap} >
+        </Menu>
         {this.state.open && props.hasMask && <div className='d-menu-mask' onTouchTap={this._onMenuMaskTap}></div>}
       </div>
     );

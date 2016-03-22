@@ -7,7 +7,8 @@ module.exports = React.createClass({
     selectedIndex: React.PropTypes.number,
     selectedVal: React.PropTypes.string,
     onItemTap: React.PropTypes.func,
-    itemTpl: React.PropTypes.func
+    itemTpl: React.PropTypes.func,
+    isScroll: React.PropTypes.isScroll
   },
 
   getDefaultProps: function(){},
@@ -55,6 +56,13 @@ module.exports = React.createClass({
         </MenuItem>
       );
       menuItems.push(menuItem);
+    }
+    if(props.isScroll){
+      return (
+        <div className="menu-scroller-wrap">
+          {menuItems}
+        </div>
+      );
     }
     return menuItems;
   },
