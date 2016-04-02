@@ -9,7 +9,8 @@ module.exports = React.createClass({
     selectedIndex: React.PropTypes.number,
     tabWillChange: React.PropTypes.func,
     tabDidChange: React.PropTypes.func,
-    onTapContent: React.PropTypes.func
+    onTapContent: React.PropTypes.func,
+    disableSetWidth: React.PropTypes.bool
   },
 
   getInitialState: function(){
@@ -23,21 +24,37 @@ module.exports = React.createClass({
       tabHeads = [],
       tabContents = [],
       tempHead, tempContent,
-      width = 100/this.getTabCount() + '%';
+      width;
+
 
     React.Children.forEach(props.children, function(item, index){
       if(item.type.displayName == 'TabItem'){
-        tempHead = (
-          <TabHeadItem
-            key={index} 
-            index={index}
-            title={item.props.title}
-            selected={this.state.selectedIndex === index}
-            width={width}
-            headTpl={props.headTpl}
-            onTap={this._onHeadTap} >
-          </TabHeadItem>
-        );
+        if(props.disableSetWidth){
+          tempHead = (
+            <TabHeadItem
+              key={index} 
+              index={index}
+              title={item.props.title}
+              selected={this.state.selectedIndex === index}
+              headTpl={props.headTpl}
+              onTap={this._onHeadTap} >
+            </TabHeadItem>
+          );
+        }else{
+          width = 100/this.getTabCount() + '%';
+          tempHead = (
+            <TabHeadItem
+              key={index} 
+              index={index}
+              title={item.props.title}
+              selected={this.state.selectedIndex === index}
+              width={width}
+              headTpl={props.headTpl}
+              onTap={this._onHeadTap} >
+            </TabHeadItem>
+          );
+        }
+        
         tempContent = (
           <TabContentItem 
             key={index}
