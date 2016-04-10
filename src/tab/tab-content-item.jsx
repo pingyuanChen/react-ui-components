@@ -4,7 +4,8 @@ module.exports = React.createClass({
   propTypes: {
     index: React.PropTypes.number,
     selected: React.PropTypes.bool,
-    onTapContent: React.PropTypes.func
+    onTapContent: React.PropTypes.func,
+    className: React.PropTypes.string
   },
 
   getDefaultProps: function(){
@@ -15,10 +16,14 @@ module.exports = React.createClass({
   },
 
   render: function(){
-    var props = this.props;
+    var props = this.props,
+      itemCls = "tab-content-item";
+    if(props.className){
+      itemCls += ' '+props.className;
+    }
     return (
       <div
-        className={"tab-content-item "+ (props.selected ? "selected" : "hide")}
+        className={itemCls+ (props.selected ? " selected" : " hide")}
         onTouchTap={this._onTap} >
         {props.children}
       </div>

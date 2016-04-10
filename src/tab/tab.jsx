@@ -60,7 +60,8 @@ module.exports = React.createClass({
             key={index}
             index={index}
             selected={this.state.selectedIndex === index}
-            onTapContent={this._onTapContent} >
+            onTapContent={this._onTapContent}
+            className={item.props.className} >
             {item.props.children}
           </TabContentItem>
         );
