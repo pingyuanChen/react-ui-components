@@ -61,6 +61,12 @@ module.exports = React.createClass({
     }
   },
 
+  componentWillReceiveProps: function(nextProps){
+    this.setState({
+      open: nextProps.open
+    });
+  },
+
   componentDidUpdate: function(){
     this._onResize();
   },
