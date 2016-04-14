@@ -35,6 +35,9 @@ module.exports = React.createClass({
     if(props.selected){
       itemClassName += ' menu-item-selected';
     }
+    if(props.data.class){
+      itemClassName += ' '+props.data.class;
+    }
     return (
       <div 
         className={itemClassName}
