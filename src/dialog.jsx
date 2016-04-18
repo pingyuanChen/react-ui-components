@@ -62,9 +62,11 @@ module.exports = React.createClass({
   },
 
   componentWillReceiveProps: function(nextProps){
-    this.setState({
-      open: nextProps.open
-    });
+    if(nextProps.open !== undefined && nextProps.open !== this.props.open){
+      this.setState({
+        open: nextProps.open
+      });
+    }
   },
 
   componentDidUpdate: function(){
