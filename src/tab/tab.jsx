@@ -18,6 +18,14 @@ module.exports = React.createClass({
       selectedIndex: this.props.selectedIndex || 0
     };
   },
+
+  componentWillReceiveProps: function(nextProps){
+    if(nextProps.selectedIndex !== undefined && nextProps.selectedIndex !== this.props.selectedIndex){
+      this.setState({
+        selectedIndex: nextProps.selectedIndex
+      });
+    }
+  },
   
   render: function(){
     var props = this.props,
