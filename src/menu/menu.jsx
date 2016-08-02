@@ -45,23 +45,23 @@ module.exports = React.createClass({
 
     for(var i=0,l=props.menuItems.length; i<l; i++){
       menuItem = props.menuItems[i];
-      if(menuItem.type === 'divider') {
-        menuItemEle = <MenuDivider />;
-      } else {
-        menuItemEle = (
-          <MenuItem
-            selected={this.state.selectedIndex === i}
-            key={i}
-            index={i}
-            data={menuItem}
-            itemTpl={props.itemTpl}
-            displayKey={props.displayKey}
-            valKey={props.valKey}
-            onTap={this._onItemTap} >
-          </MenuItem>
-        );
-      }
+      menuItemEle = (
+        <MenuItem
+          selected={this.state.selectedIndex === i}
+          key={i}
+          index={i}
+          data={menuItem}
+          itemTpl={props.itemTpl}
+          displayKey={props.displayKey}
+          valKey={props.valKey}
+          onTap={this._onItemTap} >
+        </MenuItem>
+      );
+      
       menuItems.push(menuItemEle);
+      if(menuItem.type === 'divider'){
+        menuItems.push(<MenuDivider />);
+      }
     }
     if(props.isScroll){
       return (
