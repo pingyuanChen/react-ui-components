@@ -1,5 +1,6 @@
-var React    = require('react');
-var MenuItem = require('./menu-item');
+var React       = require('react');
+var MenuItem    = require('./menu-item');
+var MenuDivider = require('./menu-divider');
 
 module.exports = React.createClass({
   propTypes: {
@@ -38,24 +39,29 @@ module.exports = React.createClass({
   },
 
   _renderChilden: function(){
-    var menuItems = [], 
+    var menuItems = [],
       props = this.props,
-      menuItem;
+      menuItem, menuItemEle;
 
     for(var i=0,l=props.menuItems.length; i<l; i++){
-      menuItem = (
-        <MenuItem
-          selected={this.state.selectedIndex === i}
-          key={i}
-          index={i}
-          data={props.menuItems[i]}
-          itemTpl={props.itemTpl}
-          displayKey={props.displayKey}
-          valKey={props.valKey}
-          onTap={this._onItemTap} >
-        </MenuItem>
-      );
-      menuItems.push(menuItem);
+      menuItem = props.menuItems[i];
+      if(menuItem.type === 'divider') {
+        menuItemEle = <MenuDivider />;
+      } else {
+        menuItemEle = (
+          <MenuItem
+            selected={this.state.selectedIndex === i}
+            key={i}
+            index={i}
+            data={menuItem}
+            itemTpl={props.itemTpl}
+            displayKey={props.displayKey}
+            valKey={props.valKey}
+            onTap={this._onItemTap} >
+          </MenuItem>
+        );
+      }
+      menuItems.push(menuItemEle);
     }
     if(props.isScroll){
       return (
